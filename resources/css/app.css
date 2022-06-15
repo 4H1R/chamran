@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import './font.css';
+
+@layer base {
+  [type='text'],
+  [type='email'],
+  [type='url'],
+  [type='password'],
+  [type='number'],
+  [type='date'],
+  [type='datetime-local'],
+  [type='month'],
+  [type='search'],
+  [type='tel'],
+  [type='time'],
+  [type='week'],
+  [multiple],
+  textarea,
+  select {
+    @apply bg-secondary-50 dark:bg-secondary-800 focus:border-primary-600 focus:ring-primary-600 dark:border-secondary-500;
+  }
+}
+
+@layer components {
+  .delay {
+    @apply transition duration-150 ease-in-out;
+  }
+
+  .h1 {
+    @apply text-3xl font-extrabold leading-tight tracking-tighter lg:text-4xl;
+  }
+
+  .btn,
+  .btn-sm {
+    @apply inline-flex items-center justify-center font-medium leading-snug border border-transparent rounded delay disabled:opacity-50;
+  }
+
+  .btn {
+    @apply px-4 py-3 md:px-8;
+  }
+
+  .btn-sm {
+    @apply px-4 py-2;
+  }
+
+  .btn-primary {
+    @apply text-white bg-primary-600 hover:bg-primary-700;
+  }
+
+  .btn-grad {
+    background-image: linear-gradient(
+      to right,
+      theme(colors.primary.400),
+      theme(colors.primary.600),
+      theme(colors.primary.800)
+    );
+
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+  }
+
+  .btn-grad:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+  }
+}
