@@ -20,7 +20,7 @@ function Links() {
       exit={{ opacity: 0 }}
       className="absolute left-0 z-20 w-full overflow-hidden top-full"
     >
-      <ul className="px-4 py-2 bg-secondary-200 dark:bg-slate-700">
+      <ul className="px-4 py-2 bg-secondary-200">
         {links.map(({ href, text }) => (
           <Link isActive={url === href} href={href} key={href}>
             {text}

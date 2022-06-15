@@ -1,16 +1,18 @@
 import React from 'react';
 
-interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
+import { IInput } from '@/App/interfaces';
+
+interface InputProps extends IInput {
   hasError?: boolean;
 }
 
-function Input({ type = 'text', hasError = false, name, ...props }: Props) {
+function Input({ type = 'text', hasError = false, name, className = '', ...props }: InputProps) {
   return (
     <input
       {...props}
       type={type}
       id={name}
-      className={`rounded ${hasError ? 'border-danger-600' : ''} `}
+      className={`rounded ${hasError ? 'border-danger-600' : ''} ${className}`}
     />
   );
 }

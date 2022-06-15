@@ -11,4 +11,11 @@ class StatusController extends Controller
     {
         return inertia('PreRegister/Status');
     }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'national_code' => 'required|digits:10',
+        ]);
+    }
 }

@@ -142,5 +142,15 @@ return [
         'phone' => 'تلفن همراه',
         'national_code' => 'کد ملی',
         'address' => 'آدرس',
+        'major_id' => 'رشته مورد نظر',
+        'seventh_math' => 'ریاضی هفتم',
+        'eighth_math' => 'ریاضی هشتم',
+        'ninth_math' => 'ریاضی نهم',
+        'seventh_science' => 'علوم هفتم',
+        'eighth_science' => 'علوم هشتم',
+        'ninth_science' => 'علوم نهم',
+        'seventh_discipline' => 'انظباط هفتم',
+        'eighth_discipline' => 'انظباط هشتم',
+        'ninth_discipline' => 'انظباط نهم',
     ]
 ];

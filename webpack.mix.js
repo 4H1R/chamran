@@ -19,7 +19,6 @@ mix
     '@': 'resources/ts',
   });
 
-
 if (mix.inProduction()) {
   mix.version();
 } else {

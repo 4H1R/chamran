@@ -19,7 +19,7 @@
   [multiple],
   textarea,
   select {
-    @apply bg-secondary-50 dark:bg-secondary-800 focus:border-primary-600 focus:ring-primary-600 dark:border-secondary-500;
+    @apply bg-secondary-50 focus:border-primary-600 focus:ring-primary-600;
   }
 }
 

@@ -1,5 +1,6 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
+const plugin = require('tailwindcss/plugin');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -9,7 +10,6 @@ module.exports = {
     './resources/views/**/*.blade.php',
     './resources/ts/**/*.tsx',
   ],
-
   theme: {
     extend: {
       colors: {
@@ -29,5 +29,20 @@ module.exports = {
     },
   },
 
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [
+    require('@tailwindcss/forms'),
+    plugin(({ addVariant, e, postcss }) => {
+      addVariant('firefox', ({ container, separator }) => {
+        const isFirefoxRule = postcss.atRule({
+          name: '-moz-document',
+          params: 'url-prefix()',
+        });
+        isFirefoxRule.append(container.nodes);
+        container.append(isFirefoxRule);
+        isFirefoxRule.walkRules((rule) => {
+          rule.selector = `.${e(`firefox${separator}${rule.selector.slice(1)}`)}`;
+        });
+      });
+    }),
+  ],
 };
