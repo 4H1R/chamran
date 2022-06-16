@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 
 import { usePage } from '@/Hooks';
 import { navbarContext } from '../Navbar';
-
 import Link from './Link';
 
 function Links() {
@@ -10,7 +9,7 @@ function Links() {
   const { url } = usePage();
 
   return (
-    <ul className="flex flex-wrap items-center justify-end flex-grow">
+    <ul className="flex flex-wrap items-center justify-center flex-grow">
       {links.map(({ href, text }) => (
         <Link isActive={url === href} href={href} key={href}>
           {text}

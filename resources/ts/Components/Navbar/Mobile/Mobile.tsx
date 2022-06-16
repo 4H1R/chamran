@@ -7,6 +7,7 @@ import { useVisible } from '@/Hooks';
 import { navbarContext } from '../Navbar';
 import Toggler from './Toggler';
 import Link from './Link';
+import Login from '../Login';
 
 function Links() {
   const links = useContext(navbarContext);
@@ -26,6 +27,9 @@ function Links() {
             {text}
           </Link>
         ))}
+        <li>
+          <Login />
+        </li>
       </ul>
     </motion.nav>
   );

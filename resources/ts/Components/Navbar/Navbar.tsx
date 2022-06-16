@@ -4,6 +4,7 @@ import { Link } from '@inertiajs/inertia-react';
 import navbarLinks from '@/Fixtures/navbarLinks';
 import Desktop from './Desktop';
 import Mobile from './Mobile';
+import Login from './Login';
 
 export const navbarContext = createContext(navbarLinks);
 
@@ -17,6 +18,7 @@ function Navbar() {
           </Link>
           <Desktop />
           <Mobile />
+          <Login className="hidden md:block" />
         </div>
       </header>
     </navbarContext.Provider>

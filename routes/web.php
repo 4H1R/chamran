@@ -16,10 +16,9 @@ use App\Http\Controllers\PreRegister\{PreRegisterController, StatusController};
 */
 
 Route::get('/', HomeController::class)->name('home');
+Route::get('/about-us', AboutUsController::class)->name('about');
+
 Route::get('/pre-register', [PreRegisterController::class, 'index'])->name('pre-register');
 Route::post('/pre-register', [PreRegisterController::class, 'store']);
 Route::get('/pre-register/status', [StatusController::class, 'index'])->name('pre-register.status');
 Route::post('/pre-register/status', [StatusController::class, 'store']);
-
-Route::get('/about-us', AboutUsController::class)->name('about');
-Route::get('/contact-us', ContactUsController::class)->name('contact');
