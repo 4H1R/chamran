@@ -1,4 +1,5 @@
 import useClickOutside from './useClickOutside';
 import useVisible from './useVisible';
+import usePage from './usePage';
 
-export { useClickOutside, useVisible };
+export { useClickOutside, useVisible, usePage };

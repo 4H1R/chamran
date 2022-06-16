@@ -32,6 +32,10 @@
     @apply text-3xl font-extrabold leading-tight tracking-tighter lg:text-4xl;
   }
 
+  .h2 {
+    @apply text-2xl font-extrabold leading-tight tracking-tighter lg:text-3xl;
+  }
+
   .btn,
   .btn-sm {
     @apply inline-flex items-center justify-center font-medium leading-snug border border-transparent rounded delay disabled:opacity-50;

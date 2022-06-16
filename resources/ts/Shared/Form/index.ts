@@ -1,7 +1,6 @@
 import Button from './Button';
-import ErrorMessage from './ErrorMessage';
 import Field from './Field';
 import FieldList from './FieldList';
-import InputContainer from './InputContainer';
+import Container from './Container';
 
-export { Button, ErrorMessage, Field, FieldList, InputContainer };
+export { Button, Field, FieldList, Container };

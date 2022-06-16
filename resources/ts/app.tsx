@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { createInertiaApp } from '@inertiajs/inertia-react';
 import { InertiaProgress } from '@inertiajs/progress';
+import { Toaster } from 'react-hot-toast';
 
 import AppLayout from '@/Layouts/AppLayout';
 
@@ -17,6 +18,7 @@ createInertiaApp({
   setup({ el, App, props }) {
     return render(
       <React.StrictMode>
+        <Toaster />
         <App {...props} />
       </React.StrictMode>,
       el,

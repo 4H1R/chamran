@@ -3,19 +3,28 @@
 namespace App\Http\Controllers\PreRegister;
 
 use App\Http\Controllers\Controller;
+use App\Models\PreRegister;
 use Illuminate\Http\Request;
 
 class StatusController extends Controller
 {
     public function index()
     {
-        return inertia('PreRegister/Status');
+        return inertia('Status');
     }
 
     public function store(Request $request)
     {
-        $request->validate([
-            'national_code' => 'required|digits:10',
+        $validated = $request->validate([
+            'national_code' => 'required|digits:10|exists:pre_registers',
+        ]);
+
+        $result = PreRegister::query()
+            ->where('national_code', $validated['national_code'])
+            ->first();
+
+        return inertia('Status', [
+            'status' => $result->status->textEn(),
         ]);
     }
 }

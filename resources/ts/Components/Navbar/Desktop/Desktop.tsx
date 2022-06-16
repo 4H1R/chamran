@@ -1,5 +1,6 @@
-import { usePage } from '@inertiajs/inertia-react';
 import React, { useContext } from 'react';
+
+import { usePage } from '@/Hooks';
 import { navbarContext } from '../Navbar';
 
 import Link from './Link';

@@ -2,11 +2,11 @@ import React, { useContext } from 'react';
 import { Inertia } from '@inertiajs/inertia';
 import { AnimatePresence, motion } from 'framer-motion';
 
+import { usePage } from '@/Hooks';
 import { useVisible } from '@/Hooks';
 import { navbarContext } from '../Navbar';
 import Toggler from './Toggler';
 import Link from './Link';
-import { usePage } from '@inertiajs/inertia-react';
 
 function Links() {
   const links = useContext(navbarContext);

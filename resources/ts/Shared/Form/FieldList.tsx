@@ -3,20 +3,21 @@ import { InertiaFormProps } from '@inertiajs/inertia-react';
 
 import { IField, IInput, ISelect } from '@/App/interfaces';
 import Input from './Fields/Input';
-import InputContainer from './InputContainer';
+import Container, { ContainerProps } from './Container';
 import Field from './Field';
 import Select from './Fields/Select';
 
 type FieldListProps = {
   formSchema: IField[];
   form: InertiaFormProps<any>;
+  containerProps?: ContainerProps;
 };
 
-function FieldList({ formSchema, form }: FieldListProps) {
+function FieldList({ formSchema, form, containerProps }: FieldListProps) {
   const { errors, data, setData, clearErrors } = form;
 
   return (
-    <InputContainer>
+    <Container {...containerProps}>
       {formSchema.map(({ name, label, type, fieldProps }) => (
         <Field name={name} label={label} error={errors[name]} key={name}>
           {type === 'input' && (
@@ -41,7 +42,7 @@ function FieldList({ formSchema, form }: FieldListProps) {
           )}
         </Field>
       ))}
-    </InputContainer>
+    </Container>
   );
 }
 

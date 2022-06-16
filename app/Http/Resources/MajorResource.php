@@ -9,8 +9,8 @@ class MajorResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'value' => $this->id,
-            'label' => $this->name,
+            'id' => $this->id,
+            'name' => $this->name,
         ];
     }
 }

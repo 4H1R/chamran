@@ -1,9 +1,8 @@
 import React from 'react';
 import { useForm } from '@inertiajs/inertia-react';
 
-import { Button, FieldList } from '@/Shared/Form';
-import Head from '@/Shared/Common/Head';
 import { IField } from '@/App/interfaces';
+import { Button, FieldList } from '@/Shared/Form';
 
 const formSchema: IField[] = [
   {
@@ -11,12 +10,11 @@ const formSchema: IField[] = [
     name: 'national_code',
     label: 'کد ملی',
     type: 'input',
-    fieldProps: { type: 'text' },
+    fieldProps: { type: 'text', className: 'w-full' },
   },
 ];
 
-function Status() {
-  const title = 'نتیجه پیش ثبت نام';
+function Form() {
   const form = useForm({ national_code: '' });
   const { processing, post } = form;
 
@@ -26,20 +24,22 @@ function Status() {
   };
 
   return (
-    <form className="space-y-6" onSubmit={handleSubmit}>
-      <Head title={title} description={title} />
-      <h1 className="h1">{title}</h1>
-      <FieldList form={form} formSchema={formSchema} />
+    <form className="flex flex-col items-center justify-center space-y-6" onSubmit={handleSubmit}>
+      <FieldList
+        containerProps={{ className: 'w-full max-w-xl', replaceClassName: true }}
+        form={form}
+        formSchema={formSchema}
+      />
       <Button
         isLoading={processing}
         disabled={processing}
         className="btn-sm btn-primary"
         type="submit"
       >
-        چک کردن وضعیت
+        برسی وضعیت
       </Button>
     </form>
   );
 }
 
-export default Status;
+export default Form;
