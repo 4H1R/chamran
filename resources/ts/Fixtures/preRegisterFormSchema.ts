@@ -27,7 +27,7 @@ export const personal: IField[] = [
     type: 'input',
     name: 'national_code',
     label: 'کد ملی',
-    fieldProps: { type: 'text' },
+    fieldProps: { type: 'number' },
   },
   {
     isRequired: true,
