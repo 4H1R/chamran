@@ -18,7 +18,7 @@ function Navbar() {
           </Link>
           <Desktop />
           <Mobile />
-          <Login className="hidden md:block" />
+          <Login className="hidden lg:block" />
         </div>
       </header>
     </navbarContext.Provider>
