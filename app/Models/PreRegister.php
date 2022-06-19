@@ -13,4 +13,9 @@ class PreRegister extends Model
     protected $casts = [
         'status' => Status::class,
     ];
+
+    public function major()
+    {
+        return $this->belongsTo(Major::class);
+    }
 }

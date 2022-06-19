@@ -17,6 +17,7 @@
         "@inertiajs/progress": "^0.2.6",
         "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
         "@tailwindcss/forms": "^0.4.0",
+        "@tailwindcss/typography": "^0.5.2",
         "@types/react-dom": "^18.0.5",
         "autoprefixer": "^10.4.2",
         "axios": "^0.25",

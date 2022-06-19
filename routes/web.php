@@ -22,3 +22,8 @@ Route::get('/pre-register', [PreRegisterController::class, 'index'])->name('pre-
 Route::post('/pre-register', [PreRegisterController::class, 'store']);
 Route::get('/pre-register/status', [StatusController::class, 'index'])->name('pre-register.status');
 Route::post('/pre-register/status', [StatusController::class, 'store']);
+
+Route::post('/logout', function () {
+    auth()->logout();
+    return redirect('/');
+})->name('auth.logout');

@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Filament\Facades\Filament;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Schema;
@@ -29,5 +30,8 @@ class AppServiceProvider extends ServiceProvider
         Model::unguard();
         Schema::defaultStringLength(191);
         JsonResource::withoutWrapping();
+        Filament::serving(function () {
+            Filament::registerTheme(mix('css/admin.css'));
+        });
     }
 }

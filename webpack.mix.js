@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const tailwindcss = require('tailwindcss');
 
 /*
  |--------------------------------------------------------------------------
@@ -14,7 +15,11 @@ const mix = require('laravel-mix');
 mix
   .ts('resources/ts/app.tsx', 'public/js')
   .react()
-  .postCss('resources/css/app.css', 'public/css', [require('tailwindcss'), require('autoprefixer')])
+  .postCss('resources/css/app.css', 'public/css', [tailwindcss(), require('autoprefixer')])
+  .postCss('resources/css/admin.css', 'public/css', [
+    tailwindcss('admin.tailwind.config.js'),
+    require('autoprefixer'),
+  ])
   .alias({
     '@': 'resources/ts',
   });
