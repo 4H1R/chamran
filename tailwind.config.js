@@ -30,6 +30,7 @@ module.exports = {
   },
 
   plugins: [
+    require("daisyui"),
     require('@tailwindcss/forms'),
     plugin(({ addVariant, e, postcss }) => {
       addVariant('firefox', ({ container, separator }) => {

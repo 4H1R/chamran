@@ -11,14 +11,14 @@ export const navbarContext = createContext(navbarLinks);
 function Navbar() {
   return (
     <navbarContext.Provider value={navbarLinks}>
-      <header className="sticky top-0 z-10 border-b border-secondary-200 bg-opacity-30 backdrop-filter backdrop-blur-lg firefox:bg-opacity-90 firefox:bg-white">
-        <div className="container flex items-center justify-between h-20">
+      <header className="sticky    top-0 z-10 bg-white  ">
+        <div className="container flex items-center justify-between h-[4.5rem]">
           <Link className="font-medium" href="/">
             هنرستان شهید چمران
           </Link>
           <Desktop />
           <Mobile />
-          <Login className="hidden lg:block" />
+          <Login className="hidden ml-12   md:block" />
         </div>
       </header>
     </navbarContext.Provider>

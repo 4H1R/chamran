@@ -9,9 +9,9 @@ function Links() {
   const { url } = usePage();
 
   return (
-    <ul className="flex flex-wrap items-center justify-center flex-grow">
+    <ul className="flex flex-wrap  items-center justify-center flex-grow">
       {links.map(({ href, text }) => (
-        <Link isActive={url === href} href={href} key={href}>
+        <Link  isActive={url === href} href={href} key={href}>
           {text}
         </Link>
       ))}
@@ -21,7 +21,7 @@ function Links() {
 
 function Desktop() {
   return (
-    <nav className="flex-grow hidden lg:flex">
+    <nav className="flex-grow hidden md:flex ">
       <Links />
     </nav>
   );

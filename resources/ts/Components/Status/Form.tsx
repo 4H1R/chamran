@@ -24,7 +24,7 @@ function Form() {
   };
 
   return (
-    <form className="flex flex-col items-center justify-center space-y-6" onSubmit={handleSubmit}>
+    <form className="flex  flex-col items-center justify-center space-y-6" onSubmit={handleSubmit}>
       <FieldList
         containerProps={{ className: 'w-full max-w-xl', replaceClassName: true }}
         form={form}

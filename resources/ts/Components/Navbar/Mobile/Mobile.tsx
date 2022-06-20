@@ -44,7 +44,7 @@ function Mobile() {
   });
 
   return (
-    <div className="lg:hidden" ref={ref}>
+    <div className="md:hidden" ref={ref}>
       <Toggler isOpen={isOpen} setIsOpen={setIsOpen} />
       <AnimatePresence>{isOpen && <Links />}</AnimatePresence>
     </div>
