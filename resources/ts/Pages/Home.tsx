@@ -5,9 +5,8 @@ import Status from './Status';
 
 function Home() {
   return (
-    <div className="space-y-4    " >
-      <div className="grid grid-cols-2  min-h-[84vh]  w-full    "
-      >
+    <div className="space-y-4    ">
+      <div className="grid grid-cols-2  min-h-[84vh]  w-full    ">
         <div className="  flex">
           <div className="flex flex-col justify-center items-center mt-11">
             <div className="   w-[70%] mb-14 ">
@@ -18,14 +17,11 @@ function Home() {
                 </p>
               </div>
               <div className=" mt-32 ">
-                <Link href="/pre-register">
-                  <a className="Button px-14 ml-10">
-                    ثبت نام
-                  </a>
+                <Link href="/pre-register" className='Button px-14 ml-10'>
+                  ثبت نام
                 </Link>
-               
-                  <Status className='btn_info_outline' />
-            
+
+                <Status className="btn_info_outline" />
               </div>
             </div>
           </div>
