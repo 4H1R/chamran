@@ -29,19 +29,20 @@
   }
 
   .btn_nav {
-    @apply flex items-center px-4 py-2 text-secondary-500 delay font-bold hover:border-b-2 hover:text-blue-300 transition-all duration-200 border-blue-300;
+    @apply cursor-pointer flex items-center px-4 py-2 text-secondary-500 delay font-bold hover:border-b-2 hover:text-blue-300 transition-all duration-200 border-blue-300;
   }
-
 
   .input-search {
     @apply rounded-xl border-b-2 border-slate-600/20 bg-white/80 p-3  opacity-70 hover:shadow-sm shadow-slate-300/50 outline-none transition-all duration-100 hover:border-sky-300/60 hover:opacity-100  hover:shadow-slate-300/70   focus:border-sky-300/60;
   }
 
-  .btn_info_outline
-  {
-    @apply hover:border-2 hover:rounded-xl transition-all text-blue-300 border-b-[3px]  border-blue-300  px-4 text-center   py-2  font-bold  text-base;
+  .btn_info_outline {
+    @apply hover:border-2 hover:rounded-xl transition-all py-3 px-6 cursor-pointer text-blue-300 border-b-[3px]  border-blue-300   text-center     font-bold  text-base;
   }
 
+  .Button {
+    @apply btn cursor-pointer   btn-info shadow-md transition-all  duration-200 hover:shadow-lg shadow-blue-200  text-blue-50 font-bold   text-base rounded-lg;
+  }
   .h1 {
     @apply text-3xl font-extrabold leading-tight tracking-tighter lg:text-4xl;
   }
@@ -49,7 +50,6 @@
   .h2 {
     @apply text-2xl font-extrabold leading-tight tracking-tighter lg:text-3xl;
   }
-
 
   .btn,
   .btn-sm {
@@ -65,22 +65,18 @@
   }
 
   .animate-bounce-2 {
-    animation: bounce-1 6s infinite normal  ;
+    animation: bounce-1 6s infinite normal;
   }
-
 
   @keyframes bounce-1 {
-    0%,100% {
-        transform: translateY(-3%);
-       
+    0%,
+    100% {
+      transform: translateY(-3%);
     }
     50% {
-        transform: none;
-      
+      transform: none;
     }
   }
-
-
 
   .btn-primary {
     @apply text-white bg-primary-600 hover:bg-primary-700;

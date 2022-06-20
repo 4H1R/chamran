@@ -17,9 +17,9 @@ function Home() {
                   با بهره مندی از بین تمامی اطلاعات در مورد هنرستان شهید چمران به شما کمک میکند.
                 </p>
               </div>
-              <div className=" mt-32">
+              <div className=" mt-32 ">
                 <Link href="/pre-register">
-                  <a className="btn ml-8 btn-info text-blue-50 font-bold  text-base rounded-lg">
+                  <a className="Button px-14 ml-10">
                     ثبت نام
                   </a>
                 </Link>

@@ -11,7 +11,7 @@ function Modal({
 }) {
   return (
     <>
-      <label htmlFor="my-modal" className={className}>
+      <label htmlFor="my-modal " className={className}>
         {title}
       </label>
       <input type="checkbox" id="my-modal" className="modal-toggle" />

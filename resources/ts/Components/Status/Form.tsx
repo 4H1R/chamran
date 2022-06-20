@@ -33,8 +33,9 @@ function Form() {
       <Button
         isLoading={processing}
         disabled={processing}
-        className="btn   btn-info shadow-md transition-all  duration-200 hover:shadow-lg shadow-blue-200  text-blue-50 font-bold px-20  text-base rounded-lg"
+        className="Button px-20"
         type="submit"
+        
       >
         برسی وضعیت
       </Button>

@@ -22,7 +22,7 @@ function Status({className}:{className:string}) {
       <div className=" relative flex flex-col   border-gray-300/50  border-[3px]  bg-white w-[26rem] h-[25rem] rounded-2xl">
         <FormAvatar />
         <div className="mt-20">
-          {!status && <h1 className="text-center h1 mb-9">{title}</h1>}
+          {!status && <h1 className="text-center text-3xl font-bold mb-9">{title}</h1>}
           {status ? <Result status={status} /> : <Form />}
         </div>
       </div>
