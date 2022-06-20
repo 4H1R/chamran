@@ -12,7 +12,7 @@ function Input({ type = 'text', hasError = false, name, className = '', ...props
       {...props}
       type={type}
       id={name}
-      className={`rounded ${hasError ? 'border-danger-600' : ''} ${className}`}
+      className={` input-search  ${hasError ? 'border-danger-600' : ''} ${className}`}
     />
   );
 }
