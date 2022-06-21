@@ -1,4 +1,5 @@
 import Navbar from '@/Components/Navbar';
+import Status from '@/Pages/Status';
 import React from 'react';
 
 
@@ -14,6 +15,7 @@ function AppLayout({ children }: AppLayoutProps) {
       backgroundImage: `url(http://www.upsara.com/images/j780580_.jpg)` 
     }}>
       <Navbar />
+      <Status />
       <main className=''>{children}</main>
     </div>
   );

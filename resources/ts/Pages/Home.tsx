@@ -23,7 +23,7 @@ function Home() {
                   ثبت نام
                 </Link>
 
-                <Status />
+            
                 <OpenModal className="btn_info_outline" name="status">
                   پیش ثبت نام
                 </OpenModal>
