@@ -37,7 +37,7 @@
   }
 
   .btn_info_outline {
-    @apply hover:border-2 hover:rounded-xl transition-all py-3 px-6 cursor-pointer text-blue-300 border-b-[3px]  border-blue-300   text-center     font-bold  text-base;
+    @apply hover:border-2 hover:rounded-xl transition-all py-2 px-6 cursor-pointer text-blue-300 border-b-[3px]  border-blue-300   text-center     font-bold  text-base;
   }
 
   .Button {

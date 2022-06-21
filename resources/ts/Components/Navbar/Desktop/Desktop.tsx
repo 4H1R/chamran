@@ -5,19 +5,23 @@ import { navbarContext } from '../Navbar';
 import Link from './Link';
 import navbarLinks from '@/Fixtures/navbarLinks';
 import Status from '@/Pages/Status';
+import { OpenModal } from '@/Components/Modal/Modal';
+
 
 function Links() {
   const links = useContext(navbarContext);
   const { url } = usePage();
 
   return (
-    <ul className="flex flex-wrap  items-center justify-center flex-grow">
+    <ul className=" flex-wrap  hidden md:flex  items-center justify-center flex-grow">
       {links.map(({ href, text }) => (
         <Link isActive={url === href} href={href} key={href}>
           {text}
         </Link>
       ))}
-      <Status className=' btn_nav '/>
+      <OpenModal className='btn_nav' name='status' >
+        نتیجه ثبت نام
+      </OpenModal>
     </ul>
   );
 }

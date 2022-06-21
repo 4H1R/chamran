@@ -16,7 +16,7 @@ function PreRegister() {
   return (
     <div className="space-y-6">
       <Head title={title} description={title} />
-      <h1 className="text-center h1">{title}</h1>
+      <h1 className="h1 text-center">{title}</h1>
       <p className="text-center text-secondary-600">
         بعد از چند روز میتوانید نتیجه پیش ثبت نام خود را در بخش نتیجه پیش ثبت نام سایت ببینید
       </p>
