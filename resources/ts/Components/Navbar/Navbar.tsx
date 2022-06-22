@@ -18,7 +18,7 @@ function Navbar() {
           </Link>
           <Desktop />
           <Mobile />
-          <Login className="hidden ml-12   md:block" />
+          <Login className="hidden ml-12 md:ml-0  md:block" />
         </div>
       </header>
     </navbarContext.Provider>

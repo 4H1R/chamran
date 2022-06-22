@@ -14,12 +14,9 @@ function PreRegister() {
   const { majors } = usePage<TPageProps>().props;
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6  mb-8 px-4">
       <Head title={title} description={title} />
       <h1 className="h1 text-center">{title}</h1>
-      <p className="text-center text-secondary-600">
-        بعد از چند روز میتوانید نتیجه پیش ثبت نام خود را در بخش نتیجه پیش ثبت نام سایت ببینید
-      </p>
       <Form majors={majors} />
     </div>
   );
