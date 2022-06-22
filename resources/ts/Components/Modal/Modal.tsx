@@ -30,7 +30,7 @@ function Modal({
     <>
 
       <input type="checkbox" id={name} className="modal-toggle" />
-      <label htmlFor={name} className="modal bg-sky-900/30 cursor-pointer">
+      <label htmlFor={name} className="modal bg-primary-900/30 cursor-pointer">
         <label htmlFor="">{children}</label>
       </label>
     </>
