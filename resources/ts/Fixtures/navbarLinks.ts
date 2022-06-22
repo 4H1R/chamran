@@ -1,7 +1,6 @@
 const navbarLinks = [
+  { href: '/', text: 'صفحه اصلی' },
   { href: '/pre-register', text: 'پیش ثبت نام' },
-
-  { href: '/about-us', text: 'درباره ما' },
 ];
 
 export default navbarLinks;

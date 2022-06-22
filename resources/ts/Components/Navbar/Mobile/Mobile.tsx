@@ -8,6 +8,8 @@ import { navbarContext } from '../Navbar';
 import Toggler from './Toggler';
 import Link from './Link';
 import Login from '../Login';
+import { OpenModal } from '@/Components/Modal/Modal';
+
 
 function Links() {
   const links = useContext(navbarContext);
@@ -27,6 +29,13 @@ function Links() {
             {text}
           </Link>
         ))}
+
+
+        <li>
+          <OpenModal className='flex py-2 text-secondary-600 hover:text-secondary-700' name='status'>
+          نتیجه ثبت نام
+          </OpenModal>
+        </li>
         <li>
           <Login />
         </li>

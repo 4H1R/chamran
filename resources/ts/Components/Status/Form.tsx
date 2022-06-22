@@ -24,7 +24,10 @@ function Form() {
   };
 
   return (
-    <form className="flex  flex-col items-center justify-center gap-6 space-y-6" onSubmit={handleSubmit}>
+    <form
+      className="flex  flex-col items-center justify-center gap-6 space-y-6"
+      onSubmit={handleSubmit}
+    >
       <FieldList
         containerProps={{ className: 'w-[85%] max-w-xl', replaceClassName: true }}
         form={form}
@@ -33,9 +36,8 @@ function Form() {
       <Button
         isLoading={processing}
         disabled={processing}
-        className="Button px-20"
+        className="button_info px-20"
         type="submit"
-        
       >
         برسی وضعیت
       </Button>

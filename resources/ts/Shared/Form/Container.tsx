@@ -5,7 +5,7 @@ export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 function Container({ children, className = '', replaceClassName, ...props }: ContainerProps) {
-  const baseClassName = 'grid  grid-cols-1 gap-6 md:grid-cols-2 ';
+  const baseClassName = 'grid  grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 ';
   return (
     <div {...props} className={replaceClassName ? className : baseClassName + className}>
       {children}

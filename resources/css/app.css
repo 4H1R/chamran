@@ -23,25 +23,46 @@
   }
 }
 
+
+  ::-webkit-scrollbar {
+    
+    width: 11px;
+     background-color: rgb(255, 255, 255);
+
+  }
+  ::-webkit-scrollbar-track {
+  
+     border-radius: 50px;
+   
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, hsla(196, 100%, 78%, 0.619), #a1dcee94);
+    border-radius: 100px;
+  }
+    ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, hsl(196, 100%, 78%), #a1dcee);
+  }
+
+
 @layer components {
   .delay {
     @apply transition duration-300 ease-in-out;
   }
 
   .btn_nav {
-    @apply cursor-pointer flex items-center px-4 py-2 text-secondary-500 delay font-bold hover:border-b-2 hover:text-blue-300 transition-all duration-200 border-blue-300;
+    @apply delay flex cursor-pointer items-center border-blue-300 px-4 py-2 font-bold text-secondary-500 transition-all duration-200 hover:border-b-2 hover:text-blue-300;
   }
 
-  .input-search {
-    @apply rounded-xl border-b-2 border-slate-600/20 bg-white/80 p-3  opacity-70 hover:shadow-sm shadow-slate-300/50 outline-none transition-all duration-100 hover:border-sky-300/60 hover:opacity-100  hover:shadow-slate-300/70   focus:border-sky-300/60;
+  .input-info {
+    @apply rounded-xl border-b-2 border-slate-600/20 bg-white/80 p-3  opacity-70 shadow-slate-300/50 outline-none transition-all duration-100 hover:border-sky-300/60 hover:opacity-100 hover:shadow-sm  hover:shadow-slate-300/70   focus:border-sky-300/60;
   }
 
   .btn_info_outline {
-    @apply hover:border-2 hover:rounded-xl transition-all py-3 px-6 cursor-pointer text-blue-300 border-b-[3px]  border-blue-300   text-center     font-bold  text-base;
+    @apply cursor-pointer border-b-[3px] border-blue-300 py-2 px-6 text-center text-base font-bold  text-blue-300   transition-all     hover:rounded-xl  hover:border-2;
   }
 
-  .Button {
-    @apply btn cursor-pointer   btn-info shadow-md transition-all  duration-200 hover:shadow-lg shadow-blue-200  text-blue-50 font-bold   text-base rounded-lg;
+  .button_info {
+    @apply btn btn-info   cursor-pointer rounded-lg text-base  font-bold text-blue-50 shadow-md  shadow-blue-200 transition-all   duration-200 hover:shadow-lg;
   }
   .h1 {
     @apply text-3xl font-extrabold leading-tight tracking-tighter lg:text-4xl;
@@ -53,7 +74,7 @@
 
   .btn,
   .btn-sm {
-    @apply inline-flex items-center justify-center font-medium leading-snug border border-transparent rounded delay disabled:opacity-50;
+    @apply delay inline-flex items-center justify-center rounded border border-transparent font-medium leading-snug disabled:opacity-50;
   }
 
   .btn {
@@ -79,7 +100,7 @@
   }
 
   .btn-primary {
-    @apply text-white bg-primary-600 hover:bg-primary-700;
+    @apply bg-primary-600 text-white hover:bg-primary-700;
   }
 
   .btn-grad {
@@ -101,4 +122,6 @@
     color: #fff;
     text-decoration: none;
   }
+
+
 }
