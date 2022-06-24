@@ -74,7 +74,7 @@ function Form({ majors }: FormProps) {
           <FieldList formSchema={formSchema} form={form} />
         </Fragment>
       ))}
-      <Button isLoading={processing} disabled={processing} type="submit" className="button_info  ">
+      <Button isLoading={processing} disabled={processing} type="submit" className=" bg-sky-400 text-stone-50 px-5 py-3 flex rounded-xl">
         ثبت اطلاعات
       </Button>
     </form>

@@ -5,7 +5,7 @@ import Head from '@/Shared/Common/Head';
 import Form from '@/Components/Status/Form';
 import Result from '@/Components/Status/Result';
 import FormAvatar from '@/Shared/Common/FormAvatar';
-import Modal from '@/Components/Modal/Modal';
+import Modal from '@/Shared/Modal/Modal';
 
 export type TStatus = 'Approved' | 'Rejected' | 'Pending';
 

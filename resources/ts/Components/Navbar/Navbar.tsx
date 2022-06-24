@@ -13,7 +13,7 @@ function Navbar() {
     <navbarContext.Provider value={navbarLinks}>
       <header className="sticky    top-0 z-10 bg-white  ">
         <div className="container flex items-center justify-between h-[4.5rem]">
-          <Link className="font-medium" href="/">
+          <Link className="font-bold text-lg" href="/">
             هنرستان شهید چمران
           </Link>
           <Desktop />

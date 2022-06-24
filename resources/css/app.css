@@ -62,7 +62,7 @@
   }
 
   .button_info {
-    @apply btn btn-info   cursor-pointer rounded-lg text-base  font-bold text-blue-50 shadow-md  shadow-blue-200 transition-all   duration-200 hover:shadow-lg;
+    @apply btn btn-info disabled:backdrop-opacity-60  disabled:opacity-50  cursor-pointer rounded-lg text-base  font-bold text-blue-50 shadow-md  shadow-blue-200 transition-all   duration-200 hover:shadow-lg;
   }
   .h1 {
     @apply text-3xl font-extrabold leading-tight tracking-tighter lg:text-4xl;
