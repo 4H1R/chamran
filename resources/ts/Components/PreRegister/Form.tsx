@@ -67,14 +67,14 @@ function Form({ majors }: FormProps) {
   };
 
   return (
-    <form className="space-y-4 " onSubmit={handleSubmit}>
+    <form className="space-y-4  " onSubmit={handleSubmit}>
       {formSchema.map(({ title, formSchema }) => (
         <Fragment key={title}>
           <h2 className="h2">{title}</h2>
           <FieldList formSchema={formSchema} form={form} />
         </Fragment>
       ))}
-      <Button isLoading={processing} disabled={processing} type="submit" className="button_info">
+      <Button isLoading={processing} disabled={processing} type="submit" className=" bg-sky-400 text-stone-50 px-5 py-3 flex rounded-xl">
         ثبت اطلاعات
       </Button>
     </form>

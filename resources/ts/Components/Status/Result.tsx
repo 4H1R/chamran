@@ -2,6 +2,7 @@ import React from 'react';
 
 import { TStatus } from '@/Pages/Status';
 import { asset } from '@/Utils';
+import CancelModal from '@/Shared/Modal/CancelModal';
 
 type ResultProps = {
   status: TStatus;
@@ -27,11 +28,12 @@ function Result({ status }: ResultProps) {
   }[status!];
 
   return (
-    <div
-      className={`flex items-center flex-col md:flex-row space-y-4 md:space-y-0 space-x-4 space-x-reverse justify-center p-4 ${color}`}
-    >
-      <h1 className="h2">{text}</h1>
-      <img src={asset(`img/${image}.png`)} alt={text} />
+    <div className="relative flex h-full w-full flex-col flex-wrap items-center  gap-8 ">
+      <h1 className="text-center text-2xl font-bold">{text}</h1>
+      <img className="w-32 object-cover " src={asset(`img/${image}.png`)} alt={text} />
+      <CancelModal name="status" className="button_info cursor-pointer px-9">
+        بازگشت
+      </CancelModal>
     </div>
   );
 }

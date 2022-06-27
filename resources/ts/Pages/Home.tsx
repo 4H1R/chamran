@@ -1,8 +1,6 @@
-import Modal, { OpenModal } from '@/Components/Modal/Modal';
-
+import { OpenModal } from '@/Shared/Modal/OpenModal';
 import { Link } from '@inertiajs/inertia-react';
 import React from 'react';
-import Status from './Status';
 
 function Home() {
   return (
@@ -13,7 +11,7 @@ function Home() {
           <div className="flex min-h-[40vh]  flex-col  items-center     md:mb-12 md:mt-11 md:h-auto  md:max-h-full md:justify-center">
             <div className="  mt-6 flex  flex-col items-center   xm:mb-14  lg:w-[70%] ">
               <div className="text-center   ">
-                <h1 className="text-3xl  text-primary-300  md:text-4xl  ">هنرستان شهید چمران</h1>
+                <h1 className="text-3xl  text-blue-300  md:text-4xl  font-bold">هنرستان شهید چمران</h1>
                 <p className="mt-4 text-lg font-bold md:mt-11  md:indent-6  md:text-xl	 ">
                   با بهره مندی از بین تمامی اطلاعات در مورد هنرستان شهید چمران به شما کمک میکند.
                 </p>
@@ -23,7 +21,7 @@ function Home() {
                   ثبت نام
                 </Link>
                 <OpenModal className="btn_info_outline" name="status">
-                  پیش ثبت نام
+                  نتیجه ثبت نام
                 </OpenModal>
               </div>
             </div>

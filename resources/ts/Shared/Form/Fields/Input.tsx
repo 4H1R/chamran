@@ -12,7 +12,7 @@ function Input({ type = 'text', hasError = false, name, className = '', ...props
       {...props}
       type={type}
       id={name}
-      className={`${hasError ? 'border-danger-600' : ''} ${className}`}
+      className={` input-info ${hasError ? 'border-danger-600' : ''} ${className}`}
     />
   );
 }

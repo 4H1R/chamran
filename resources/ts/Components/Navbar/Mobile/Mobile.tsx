@@ -8,7 +8,8 @@ import { navbarContext } from '../Navbar';
 import Toggler from './Toggler';
 import Link from './Link';
 import Login from '../Login';
-import { OpenModal } from '@/Components/Modal/Modal';
+import { OpenModal } from '@/Shared/Modal/OpenModal';
+
 
 
 function Links() {
