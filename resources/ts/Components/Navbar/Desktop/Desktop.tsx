@@ -1,11 +1,9 @@
 import React, { useContext } from 'react';
-
 import { usePage } from '@/Hooks';
 import { navbarContext } from '../Navbar';
 import Link from './Link';
-import navbarLinks from '@/Fixtures/navbarLinks';
-import Status from '@/Pages/Status';
-import { OpenModal } from '@/Components/Modal/Modal';
+import OpenModal from '@/Shared/Modal/OpenModal';
+
 
 
 function Links() {
