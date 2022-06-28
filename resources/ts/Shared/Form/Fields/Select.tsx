@@ -13,6 +13,7 @@ function Select({ hasError = false, name, options, ...props }: SelectProps) {
       id={name}
       className={`input-info ${hasError ? 'border-danger-600' : ''} `}
     >
+      <option>انتخاب کنید</option>
       {options.map((option) => (
         <option key={option.value} value={option.value}>
           {option.label}
