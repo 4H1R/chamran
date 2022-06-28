@@ -1,6 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
-const plugin = require('tailwindcss/plugin');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -11,15 +10,6 @@ module.exports = {
     './resources/ts/**/*.tsx',
   ],
   theme: {
-    screens: {
-      'xm': '415px',
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
-      
-    },
-
     extend: {
       colors: {
         danger: colors.red,
@@ -39,20 +29,6 @@ module.exports = {
   },
 
   plugins: [
-    require("daisyui"),
     require('@tailwindcss/forms'),
-    plugin(({ addVariant, e, postcss }) => {
-      addVariant('firefox', ({ container, separator }) => {
-        const isFirefoxRule = postcss.atRule({
-          name: '-moz-document',
-          params: 'url-prefix()',
-        });
-        isFirefoxRule.append(container.nodes);
-        container.append(isFirefoxRule);
-        isFirefoxRule.walkRules((rule) => {
-          rule.selector = `.${e(`firefox${separator}${rule.selector.slice(1)}`)}`;
-        });
-      });
-    }),
   ],
 };

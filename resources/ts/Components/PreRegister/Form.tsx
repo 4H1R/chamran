@@ -41,7 +41,7 @@ function Form({ majors }: FormProps) {
         formSchema: educational,
       },
     ],
-    [majors],
+    [majors]
   );
 
   const initialValues = formSchema.reduce((acc, forms) => {
@@ -67,14 +67,19 @@ function Form({ majors }: FormProps) {
   };
 
   return (
-    <form className="space-y-4  " onSubmit={handleSubmit}>
+    <form className="space-y-4" onSubmit={handleSubmit}>
       {formSchema.map(({ title, formSchema }) => (
         <Fragment key={title}>
-          <h2 className="h2">{title}</h2>
+          <h1 className="h1">{title}</h1>
           <FieldList formSchema={formSchema} form={form} />
         </Fragment>
       ))}
-      <Button isLoading={processing} disabled={processing} type="submit" className=" bg-sky-400 text-stone-50 px-5 py-3 flex rounded-xl">
+      <Button
+        isLoading={processing}
+        disabled={processing}
+        type="submit"
+        className="btn btn-primary"
+      >
         ثبت اطلاعات
       </Button>
     </form>

@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-import { TStatus } from '@/Pages/Status';
+import { TStatus } from './Status';
 import { asset } from '@/Utils';
-import CancelModal from '@/Shared/Modal/CancelModal';
+import { statusContext } from '@/Layouts/AppLayout';
 
 type ResultProps = {
   status: TStatus;
 };
 
 function Result({ status }: ResultProps) {
+  const { setIsOpen } = useContext(statusContext);
   const { text, image, color } = {
     Approved: {
       text: 'شما تایید شدید',
@@ -28,12 +29,20 @@ function Result({ status }: ResultProps) {
   }[status!];
 
   return (
-    <div className="relative flex h-full w-full flex-col flex-wrap items-center  gap-8 ">
+    <div className="relative flex h-full w-full flex-col flex-wrap items-center gap-8 ">
       <h1 className="text-center text-2xl font-bold">{text}</h1>
-      <img className="w-32 object-cover " src={asset(`img/${image}.png`)} alt={text} />
-      <CancelModal name="status" className="button_info cursor-pointer px-9">
+      <img
+        className="w-32 object-cover "
+        src={asset(`img/${image}.png`)}
+        alt={text}
+      />
+      <button
+        onClick={() => setIsOpen(false)}
+        type="button"
+        className="btn btn-secondary"
+      >
         بازگشت
-      </CancelModal>
+      </button>
     </div>
   );
 }

@@ -8,7 +8,11 @@ interface SelectProps extends ISelect {
 
 function Select({ hasError = false, name, options, ...props }: SelectProps) {
   return (
-    <select {...props} id={name} className={`input-info ${hasError ? 'border-danger-600' : ''} `}>
+    <select
+      {...props}
+      id={name}
+      className={`input-info ${hasError ? 'border-danger-600' : ''} `}
+    >
       {options.map((option) => (
         <option key={option.value} value={option.value}>
           {option.label}

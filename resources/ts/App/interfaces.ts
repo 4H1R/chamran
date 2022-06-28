@@ -3,8 +3,12 @@ import { PageProps, Page } from '@inertiajs/inertia';
 
 export interface IInput extends React.InputHTMLAttributes<HTMLInputElement> {}
 
+export interface ISelectOption {
+  label: string;
+  value: string;
+}
 export interface ISelect extends React.SelectHTMLAttributes<HTMLSelectElement> {
-  options: { label: string; value: string }[];
+  options: ISelectOption[];
 }
 
 export interface IField {

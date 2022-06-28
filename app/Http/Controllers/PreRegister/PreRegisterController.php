@@ -35,9 +35,9 @@ class PreRegisterController extends Controller
             'seventh_science' => 'required|numeric|min:5|max:20',
             'eighth_science' => 'required|numeric|min:5|max:20',
             'ninth_science' => 'required|numeric|min:5|max:20',
-            'seventh_discipline' => 'required|numeric|min:5|max:20',
-            'eighth_discipline' => 'required|numeric|min:5|max:20',
-            'ninth_discipline' => 'required|numeric|min:5|max:20',
+            'seventh_discipline' => 'required|numeric|min:1|max:5',
+            'eighth_discipline' => 'required|numeric|min:1|max:5',
+            'ninth_discipline' => 'required|numeric|min:1|max:5',
         ]);
 
         PreRegister::create($validated);

@@ -8,11 +8,6 @@ use Illuminate\Http\Request;
 
 class StatusController extends Controller
 {
-    public function index()
-    {
-        return inertia('Status');
-    }
-
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -23,7 +18,7 @@ class StatusController extends Controller
             ->where('national_code', $validated['national_code'])
             ->first();
 
-        return inertia('Status', [
+        return inertia('Home', [
             'status' => $result->status->textEn(),
         ]);
     }

@@ -12,7 +12,7 @@ function Link({ children, href, isActive }: LinkProps) {
     <li>
       <InertiaLink
         href={href}
-        className={`btn_nav`}
+        className={`btn-nav ${isActive ? 'text-primary-600' : ''}`}
       >
         {children}
       </InertiaLink>

@@ -1,3 +1,4 @@
+import { ISelectOption } from './../App/interfaces';
 import { IField } from '@/App/interfaces';
 
 export const personal: IField[] = [
@@ -52,6 +53,13 @@ export const personal: IField[] = [
   },
 ];
 
+const scoreOptions: ISelectOption[] = [
+  { label: 'عالی', value: '4' },
+  { label: 'خیلی خوب', value: '3' },
+  { label: 'خوب', value: '2' },
+  { label: 'نیاز به تلاش', value: '1' },
+];
+
 export const educational: IField[] = [
   {
     isRequired: true,
@@ -97,23 +105,23 @@ export const educational: IField[] = [
   },
   {
     isRequired: true,
-    type: 'input',
+    type: 'select',
     name: 'seventh_discipline',
     label: 'انظباط هفتم',
-    fieldProps: { type: 'number' },
+    fieldProps: { options: scoreOptions },
   },
   {
     isRequired: true,
-    type: 'input',
+    type: 'select',
     name: 'eighth_discipline',
     label: 'انظباط هشتم',
-    fieldProps: { type: 'number' },
+    fieldProps: { options: scoreOptions },
   },
   {
     isRequired: true,
-    type: 'input',
+    type: 'select',
     name: 'ninth_discipline',
     label: 'علوم نهم',
-    fieldProps: { type: 'number' },
+    fieldProps: { options: scoreOptions },
   },
 ];

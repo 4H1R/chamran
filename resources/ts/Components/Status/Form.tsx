@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from '@inertiajs/inertia-react';
 
 import { IField } from '@/App/interfaces';
 import { Button, FieldList } from '@/Shared/Form';
+import { statusContext } from '@/Layouts/AppLayout';
 
 const formSchema: IField[] = [
   {
@@ -15,8 +16,10 @@ const formSchema: IField[] = [
 ];
 
 function Form() {
+  const { setIsOpen } = useContext(statusContext);
   const form = useForm({ national_code: '' });
   const { processing, post } = form;
+  const title = 'نتیجه پیش ثبت نام';
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -24,24 +27,36 @@ function Form() {
   };
 
   return (
-    <form
-      className="flex  flex-col items-center justify-center gap-6 space-y-6"
-      onSubmit={handleSubmit}
-    >
-      <FieldList
-        containerProps={{ className: 'w-[85%] max-w-xl', replaceClassName: true }}
-        form={form}
-        formSchema={formSchema}
-      />
-      <Button
-        isLoading={processing}
-        disabled={processing}
-        className="button_info px-20"
-        type="submit"
+    <>
+      <h1 className="mb-9 text-center text-3xl font-bold">{title}</h1>
+      <form
+        className="container flex flex-col items-center justify-center gap-6 space-y-6"
+        onSubmit={handleSubmit}
       >
-        برسی وضعیت
-      </Button>
-    </form>
+        <FieldList
+          containerProps={{ replaceClassName: true, className: 'w-full' }}
+          form={form}
+          formSchema={formSchema}
+        />
+        <div className="flex space-x-4 space-x-reverse">
+          <Button
+            isLoading={processing}
+            disabled={processing}
+            className="btn-sm btn-primary"
+            type="submit"
+          >
+            برسی وضعیت
+          </Button>
+          <button
+            onClick={() => setIsOpen(false)}
+            type="button"
+            className="btn-sm btn-secondary"
+          >
+            بازگشت
+          </button>
+        </div>
+      </form>
+    </>
   );
 }
 

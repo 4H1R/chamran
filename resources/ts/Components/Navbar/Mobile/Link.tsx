@@ -12,8 +12,10 @@ function Link({ children, href, isActive }: LinkProps) {
     <li>
       <InertiaLink
         href={href}
-        className={`flex py-2 text-secondary-600 hover:text-secondary-700 ${
-          isActive ? 'text-primary-600 font-medium' : ''
+        className={`flex py-2  ${
+          isActive
+            ? 'font-medium text-primary-600'
+            : 'text-secondary-600 hover:text-secondary-700'
         } `}
       >
         {children}

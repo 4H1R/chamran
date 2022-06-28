@@ -7,7 +7,8 @@
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
         "prod": "npm run production",
-        "production": "mix --production"
+        "production": "mix --production",
+        "format": "prettier --write '**/*.{tsx,ts}'"
     },
     "devDependencies": {
         "@babel/preset-react": "^7.16.7",
@@ -35,7 +36,6 @@
     },
     "dependencies": {
         "@heroicons/react": "^1.0.6",
-        "daisyui": "^2.15.4",
         "framer-motion": "^6.3.11",
         "react-hot-toast": "^2.2.0"
     }

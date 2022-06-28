@@ -8,9 +8,7 @@ import { navbarContext } from '../Navbar';
 import Toggler from './Toggler';
 import Link from './Link';
 import Login from '../Login';
-import { OpenModal } from '@/Shared/Modal/OpenModal';
-
-
+import OpenStatusModal from '../OpenStatusModal';
 
 function Links() {
   const links = useContext(navbarContext);
@@ -22,21 +20,15 @@ function Links() {
       transition={{ duration: 0.2 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="absolute left-0 z-20 w-full overflow-hidden top-full"
+      className="absolute left-0 top-full z-20 w-full overflow-hidden"
     >
-      <ul className="px-4 py-2 bg-secondary-200">
+      <ul className="bg-secondary-200 px-4 py-2">
         {links.map(({ href, text }) => (
           <Link isActive={url === href} href={href} key={href}>
             {text}
           </Link>
         ))}
-
-
-        <li>
-          <OpenModal className='flex py-2 text-secondary-600 hover:text-secondary-700' name='status'>
-          نتیجه ثبت نام
-          </OpenModal>
-        </li>
+        <OpenStatusModal className="flex py-2 text-secondary-600 hover:text-secondary-700" />
         <li>
           <Login />
         </li>

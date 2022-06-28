@@ -4,7 +4,7 @@ function LoadingSpinner() {
   return (
     <div
       style={{ borderTopColor: 'transparent' }}
-      className="w-6 h-6 border-2 border-solid rounded-full border-white animate-spin"
+      className="h-6 w-6 animate-spin rounded-full border-2 border-solid border-white"
     />
   );
 }

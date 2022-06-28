@@ -10,7 +10,7 @@ type FieldProps = {
 function Field({ name, label, error, children }: FieldProps) {
   return (
     <div className="flex flex-col space-y-2 ">
-      <label className="text-base text-secondary-700 font-bold" htmlFor={name}>
+      <label className="text-base font-bold text-secondary-700" htmlFor={name}>
         {label}
         <sup className="font-medium text-danger-700">*</sup>
       </label>

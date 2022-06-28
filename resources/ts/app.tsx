@@ -6,7 +6,8 @@ import { Toaster } from 'react-hot-toast';
 
 import AppLayout from '@/Layouts/AppLayout';
 
-const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
+const appName =
+  window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 
 createInertiaApp({
   title: (title) => `${title} - ${appName}`,
@@ -21,7 +22,7 @@ createInertiaApp({
         <Toaster />
         <App {...props} />
       </React.StrictMode>,
-      el,
+      el
     );
   },
 });
