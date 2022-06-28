@@ -20,6 +20,7 @@ class StatusController extends Controller
 
         return inertia('Home', [
             'status' => $result->status->textEn(),
+            'full_name' => "{$result->first_name} {$result->last_name}",
         ]);
     }
 }
