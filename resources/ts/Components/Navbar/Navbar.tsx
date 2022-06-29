@@ -15,7 +15,7 @@ function Navbar() {
         transition={{ duration: 0.6 }}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className="fixed top-0 z-10 w-full bg-white shadow"
+        className="sticky top-0 z-10 w-full bg-white shadow"
       >
         <div className="container flex items-center justify-between py-4">
           <Link className="font-bold" href="/">
