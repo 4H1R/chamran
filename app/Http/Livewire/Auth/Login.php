@@ -37,7 +37,7 @@ class Login extends Component implements HasForms
     public function authenticate(): void
     {
         try {
-            $this->rateLimit(5);
+            $this->rateLimit(3, 120);
         } catch (TooManyRequestsException $exception) {
             $this->addError('username', __('filament::login.messages.throttled', [
                 'seconds' => $exception->secondsUntilAvailable,
