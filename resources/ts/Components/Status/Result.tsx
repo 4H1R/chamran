@@ -24,7 +24,7 @@ function Result({ status, fullName }: ResultProps) {
       image: 'rejected',
     },
     Pending: {
-      text: 'پیش ثبت نام شما در انتظار تایید هستید',
+      text: 'پیش ثبت نام شما در انتظار تایید است',
       image: 'pending',
     },
   }[status];

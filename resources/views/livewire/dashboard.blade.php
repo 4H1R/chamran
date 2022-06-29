@@ -1,6 +1,6 @@
 <div class="space-y-4">
     <h1 class="text-3xl font-bold">داشبورد</h1>
-    <div class="p-2 space-y-2 bg-white shadow rounded-xl dark:border-gray-600 dark:bg-gray-800">
+    <div class="p-2 space-y-2 bg-white shadow rounded-xl">
         <div class="space-y-2">
             <div class="px-4 py-2 space-y-4">
                 <div class="flex items-center h-12 space-x-4 rtl:space-x-reverse">
@@ -16,7 +16,7 @@
                         <form action="{{ route('auth.logout') }}" method="post" class="text-sm">
                             @csrf
                             <button type="submit"
-                                class="text-gray-600 hover:text-primary-500 focus:outline-none focus:underline dark:text-gray-300 dark:hover:text-primary-500">
+                                class="text-gray-600 hover:text-primary-500 focus:outline-none focus:underline">
                                 خروج
                             </button>
                         </form>
