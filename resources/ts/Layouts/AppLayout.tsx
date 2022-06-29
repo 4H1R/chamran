@@ -22,7 +22,7 @@ function AppLayout({ children }: AppLayoutProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex flex-col min-h-screen relative">
+    <div className="relative flex min-h-screen flex-col">
       <statusContext.Provider value={{ isOpen, setIsOpen }}>
         <StatusModal />
         <Navbar />

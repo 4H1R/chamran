@@ -7,10 +7,7 @@ function Actions() {
   const { setIsOpen } = useContext(statusContext);
 
   return (
-    <div
-
-      className="flex items-center justify-center space-x-4 space-x-reverse lg:justify-start"
-    >
+    <div className="flex items-center justify-center space-x-4 space-x-reverse lg:justify-start">
       <button
         type="button"
         onClick={() => setIsOpen(true)}

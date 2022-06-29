@@ -24,7 +24,7 @@ function Error({ status }: ErrorProps) {
   }[status];
 
   return (
-    <div className="container flex flex-col items-center justify-center flex-grow space-y-4 text-center">
+    <div className="container flex flex-grow flex-col items-center justify-center space-y-4 text-center">
       <Head title={title!} description={title + ' ' + desc} />
       <img
         src={asset('svg/error.svg')}

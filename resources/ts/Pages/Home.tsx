@@ -4,14 +4,15 @@ import { motion } from 'framer-motion';
 import { asset } from '@/Utils';
 import Head from '@/Shared/Common/Head';
 import Actions from '@/Components/Home/Actions';
+import Intro from '@/Components/Home/Intro';
 
 function Home() {
-  const description =
-    'هنرستانی با بیش از ۵ دهه آموزش و با بهره مندی از اساتید با تجربه و محیط جذاب به شما در رشد تحصیلی کمک میکند.';
-
   return (
     <div className="container flex flex-col items-center space-y-6 lg:flex-row-reverse lg:space-y-0">
-      <Head title="صفحه اصلی" description={description} />
+      <Head
+        title="صفحه اصلی"
+        description="هنرستانی با بیش از ۵ دهه آموزش و با بهره مندی از اساتید با تجربه و محیط جذاب به شما در رشد تحصیلی کمک میکند."
+      />
       <motion.img
         transition={{ duration: 0.6 }}
         initial={{ opacity: 0, y: -100 }}
@@ -26,10 +27,7 @@ function Home() {
         animate={{ opacity: 1, y: 0 }}
         className="space-y-6 text-center lg:text-right"
       >
-        <h1 className="h1">هنرستان شهید چمران</h1>
-        <p className="text-xl leading-loose text-secondary-600">
-          {description}
-        </p>
+        <Intro />
         <Actions />
       </motion.div>
     </div>

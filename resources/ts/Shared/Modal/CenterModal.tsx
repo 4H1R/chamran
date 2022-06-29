@@ -24,10 +24,10 @@ function CenterModal({
             initial={{ opacity: 0, y: -100, scale: 0 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-30 flex items-center justify-center overflow-x-hidden overflow-y-auto"
+            className="fixed inset-0 z-30 flex items-center justify-center overflow-y-auto overflow-x-hidden"
           >
             <div className={`relative mx-auto w-full px-4 ${maxWidth}`}>
-              <div className="flex flex-col w-full bg-white border-4 rounded-lg shadow-xl border-gray-300/40">
+              <div className="flex w-full flex-col rounded-lg border-4 border-gray-300/40 bg-white shadow-xl">
                 <div className="p-3 md:p-5">{children}</div>
               </div>
             </div>

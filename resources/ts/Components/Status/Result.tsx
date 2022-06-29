@@ -47,7 +47,7 @@ function Result({ status, fullName }: ResultProps) {
           Inertia.visit('/');
         }}
         type="button"
-        className=" btn-red px-16 py-3 rounded-lg mt-11  "
+        className=" btn-red mt-11 rounded-lg px-16 py-3  "
       >
         بازگشت
       </button>
