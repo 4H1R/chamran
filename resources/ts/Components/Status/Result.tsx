@@ -29,15 +29,15 @@ function Result({ status, fullName }: ResultProps) {
     },
   }[status];
   return (
-    <div className="relative flex flex-col flex-wrap items-center w-full h-full space-y-4 text-center">
-      <h1 className="text-2xl h1">
+    <div className="relative flex h-full w-full flex-col flex-wrap items-center space-y-4 text-center">
+      <h1 className="h1 text-2xl">
         جناب آقای <span className="text-primary-600">{fullName}</span> {text}
       </h1>
       {description && (
         <p className="text-lg text-secondary-600">{description}</p>
       )}
       <img
-        className="object-cover w-32"
+        className="w-32  object-cover"
         src={asset(`img/${image}.png`)}
         alt={text}
       />
@@ -47,7 +47,7 @@ function Result({ status, fullName }: ResultProps) {
           Inertia.visit('/');
         }}
         type="button"
-        className="btn btn-secondary"
+        className=" btn-red px-16 py-3 rounded-lg mt-11  "
       >
         بازگشت
       </button>

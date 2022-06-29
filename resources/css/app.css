@@ -20,7 +20,7 @@
   [multiple],
   textarea,
   select {
-    @apply p-3 rounded outline-none delay border-secondary-400 bg-secondary-50 hover:border-secondary-500 focus:border-primary-600 focus:ring-primary-600;
+    @apply delay rounded-md border-secondary-400 bg-secondary-50/70 p-3 outline-none hover:border-secondary-500 focus:border-primary-500 focus:ring-primary-600;
   }
 }
 
@@ -30,7 +30,7 @@
   }
 
   .btn-nav {
-    @apply flex items-center px-4 py-2 pb-1 cursor-pointer delay border-primary-600 text-secondary-500 hover:border-b-2 hover:text-primary-600;
+    @apply delay flex cursor-pointer items-center border-primary-500 px-4 py-2 pb-1 text-secondary-500 hover:border-b-2 hover:text-primary-500;
   }
 
   .h1 {
@@ -43,7 +43,7 @@
 
   .btn,
   .btn-sm {
-    @apply inline-flex items-center justify-center font-medium leading-snug border border-transparent rounded delay disabled:opacity-50;
+    @apply delay inline-flex items-center justify-center rounded-md border border-transparent font-medium leading-snug disabled:opacity-50;
   }
 
   .btn {
@@ -51,18 +51,18 @@
   }
 
   .btn-sm {
-    @apply px-4 py-2;
+    @apply px-6 py-2;
   }
 
   .btn-primary {
-    @apply text-white bg-primary-600 hover:bg-primary-700;
+    @apply bg-primary-500/70 font-bold text-white  hover:bg-primary-500;
   }
 
-  .btn-secondary {
-    @apply text-white bg-secondary-600 hover:bg-secondary-700;
+  .btn-red {
+    @apply bg-red-400 text-white hover:bg-red-500;
   }
 
   .btn-outline-primary {
-    @apply border border-primary-600 text-primary-600 hover:border-none hover:bg-primary-600 hover:text-white;
+    @apply border border-primary-500 text-primary-500 hover:border-none hover:bg-primary-500 hover:text-white;
   }
 }

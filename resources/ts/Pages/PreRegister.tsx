@@ -14,7 +14,7 @@ function PreRegister() {
   const { majors } = usePage<TPageProps>().props;
 
   return (
-    <div className="container space-y-6">
+    <div className="container mt-28 py-3 space-y-6">
       <Head title={title} description={title} />
       <Form majors={majors} />
     </div>

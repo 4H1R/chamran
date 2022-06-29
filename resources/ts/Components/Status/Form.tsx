@@ -28,7 +28,7 @@ function Form() {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-3xl text-center h1">{title}</h1>
+      <h1 className="h1 text-center text-3xl">{title}</h1>
       <form
         className="container flex flex-col items-center justify-center gap-6 space-y-6"
         onSubmit={handleSubmit}
@@ -50,7 +50,7 @@ function Form() {
           <button
             onClick={() => setIsOpen(false)}
             type="button"
-            className="btn-sm btn-secondary"
+            className="btn-sm btn-red"
           >
             بازگشت
           </button>

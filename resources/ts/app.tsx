@@ -16,6 +16,7 @@ createInertiaApp({
     page.layout = (page: React.ReactNode) => <AppLayout>{page}</AppLayout>;
     return page;
   },
+
   setup({ el, App, props }) {
     return render(
       <React.StrictMode>
