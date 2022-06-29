@@ -14,25 +14,25 @@ function Result({ status, fullName }: ResultProps) {
   const { setIsOpen } = useContext(statusContext);
   const { text, image, description } = {
     Approved: {
-      text: 'شما تایید شدید',
+      text: 'پیش ثبت نام شما مورد تایید قرار گرفت',
       description:
-        'پیش ثبت نام شما مورد تأیید قرار گرفت جهت تکمیل ثبت نام حداکثر ظرف یک هفته به هنرستان فنی شهید چمران مراجعه کنید در صورت عدم مراجعه این هنرستان نعهدی به ثبت نام شما ندارد.',
+        'جهت تکمیل ثبت نام حداکثر ظرف یک هفته به هنرستان فنی شهید چمران مراجعه کنید در صورت عدم مراجعه این هنرستان تعهدی به ثبت نام شما ندارد.',
       image: 'approved',
     },
     Rejected: {
-      text: 'شما رد شدید',
+      text: 'متاسفانه پیش ثبت نام شما مورد تایید قرار نگرفت',
       image: 'rejected',
     },
     Pending: {
-      text: 'شما در انتظار تایید هستید',
+      text: 'پیش ثبت نام شما در انتظار تایید هستید',
       image: 'pending',
     },
   }[status];
-  const title = `جناب آقای ${fullName} ${text}`;
-
   return (
     <div className="relative flex flex-col flex-wrap items-center w-full h-full space-y-4 text-center">
-      <h1 className="text-2xl font-bold">{title}</h1>
+      <h1 className="text-2xl font-bold">
+        جناب آقای <span className="text-primary-600">{fullName}</span> {text}
+      </h1>
       {description && (
         <p className="text-lg text-secondary-600">{description}</p>
       )}
