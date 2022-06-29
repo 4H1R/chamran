@@ -24,7 +24,7 @@ function Error({ status }: ErrorProps) {
   }[status];
 
   return (
-    <div className="container flex flex-grow flex-col items-center justify-center space-y-4 text-center">
+    <div className="container flex flex-col items-center justify-center flex-grow space-y-4 text-center">
       <Head title={title!} description={title + ' ' + desc} />
       <img
         src={asset('svg/error.svg')}
@@ -32,7 +32,7 @@ function Error({ status }: ErrorProps) {
         alt={`${status} error`}
       />
       <div className="flex flex-col items-center md:flex-row">
-        <div className="flex flex-col space-y-2">
+        <div className="flex flex-col space-y-4">
           <h1 className="h1">
             <span className="text-primary-600">{status}</span> {title}
           </h1>

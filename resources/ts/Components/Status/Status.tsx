@@ -16,7 +16,7 @@ function Status() {
   const { status, full_name } = usePage<TPageProps>().props;
 
   return (
-    <div data-aos="fade-up" className="relative flex flex-col">
+    <div className="relative flex flex-col">
       <FormAvatar />
       <div className="mt-12 mb-5">
         {status ? <Result status={status} fullName={full_name!} /> : <Form />}

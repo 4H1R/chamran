@@ -3,8 +3,6 @@ import React, { createContext, useState } from 'react';
 import Navbar from '@/Components/Navbar';
 import StatusModal from '@/Components/Status/Modal';
 import Main from '@/Components/AppLayout/Main';
-import AOS from 'aos';
-import 'aos/dist/aos.css'; 
 
 type TStatusContext = {
   isOpen: boolean;
@@ -19,13 +17,12 @@ export const statusContext = createContext<TStatusContext>({
 type AppLayoutProps = {
   children: React.ReactNode;
 };
-AOS.init();
 
 function AppLayout({ children }: AppLayoutProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex flex-col min-h-screen">
       <statusContext.Provider value={{ isOpen, setIsOpen }}>
         <StatusModal />
         <Navbar />

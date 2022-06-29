@@ -1,5 +1,6 @@
 import React, { createContext } from 'react';
 import { Link } from '@inertiajs/inertia-react';
+import { motion } from 'framer-motion';
 
 import navbarLinks from '@/Fixtures/navbarLinks';
 import Desktop from './Desktop';
@@ -10,9 +11,10 @@ export const navbarContext = createContext(navbarLinks);
 function Navbar() {
   return (
     <navbarContext.Provider value={navbarLinks}>
-      <header
-        data-aos="fade-down"
-        data-aos-duration="1000"
+      <motion.header
+        transition={{ duration: 0.6 }}
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
         className="fixed top-0 z-10 w-full bg-white shadow"
       >
         <div className="container flex items-center justify-between py-4">
@@ -22,7 +24,7 @@ function Navbar() {
           <Desktop />
           <Mobile />
         </div>
-      </header>
+      </motion.header>
     </navbarContext.Provider>
   );
 }
