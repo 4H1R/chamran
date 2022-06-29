@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Enums\PreRegister\Score;
 use App\Enums\PreRegister\Status;
 use App\Filament\Resources\PreRegisterResource\Pages;
 use App\Filament\Traits\hasExcel;
@@ -76,22 +77,34 @@ class PreRegisterResource extends Resource
                 TextColumn::make('major.name')
                     ->label('رشته درخواستی'),
                 TextColumn::make('seventh_math')
+                    ->sortable()
                     ->label('ریاضی هفتم'),
                 TextColumn::make('eighth_math')
+                    ->sortable()
                     ->label('ریاضی هشتم'),
                 TextColumn::make('ninth_math')
+                    ->sortable()
                     ->label('ریاضی نهم'),
                 TextColumn::make('seventh_science')
+                    ->sortable()
                     ->label('علوم هفتم'),
                 TextColumn::make('eighth_science')
+                    ->sortable()
                     ->label('علوم هشتم'),
                 TextColumn::make('ninth_science')
+                    ->sortable()
                     ->label('علوم نهم'),
                 TextColumn::make('seventh_discipline')
+                    ->sortable()
+                    ->formatStateUsing(static fn ($state) => Score::tryFrom($state)->textFa())
                     ->label('انظباط هفتم'),
                 TextColumn::make('eighth_discipline')
+                    ->sortable()
+                    ->formatStateUsing(static fn ($state) => Score::tryFrom($state)->textFa())
                     ->label('انظباط هشتم'),
                 TextColumn::make('ninth_discipline')
+                    ->sortable()
+                    ->formatStateUsing(static fn ($state) => Score::tryFrom($state)->textFa())
                     ->label('انظباط نهم')
             ])
             ->prependActions([

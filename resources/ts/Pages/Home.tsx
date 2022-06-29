@@ -3,14 +3,19 @@ import { Link } from '@inertiajs/inertia-react';
 
 import { asset } from '@/Utils';
 import { statusContext } from '@/Layouts/AppLayout';
+import Head from '@/Shared/Common/Head';
 
 function Home() {
   const { setIsOpen } = useContext(statusContext);
 
   return (
     <div className="container flex flex-col items-center justify-center space-y-6 space-x-reverse lg:flex-row-reverse lg:space-x-4 lg:space-y-0">
+      <Head
+        title="صفحه اصلی"
+        description="هنرستانی با بیش از ۵ دهه اموزش و با بهره مندی از معلیمن با تجربه و محیط جذاب به شما در رشد تحصیلی کمک میکند."
+      />
       <img
-        className="animate-bounce-2 max-w-sm lg:max-w-2xl"
+        className="max-w-sm animate-bounce-2 lg:max-w-2xl"
         src={asset('img/student.png')}
         alt="Student"
       />

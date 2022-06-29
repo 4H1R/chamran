@@ -18,9 +18,7 @@ function Input({
       {...props}
       type={type}
       id={name}
-      className={` input-info ${
-        hasError ? 'border-danger-600' : ''
-      } ${className}`}
+      className={`${hasError ? 'border-danger-600' : ''} ${className} `}
     />
   );
 }

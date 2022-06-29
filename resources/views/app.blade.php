@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title inertia>{{ config('app.name', 'Laravel') }}</title>
-    <meta inertia name="description" content="This is the default description" />
+    <meta data-rh="true" name="description" content="هنرستان شهید چمران" />
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
     <!-- Scripts -->
-    @routes
+    {{-- @routes --}}
     <script src="{{ mix('js/app.js') }}" defer></script>
     @inertiaHead
 </head>

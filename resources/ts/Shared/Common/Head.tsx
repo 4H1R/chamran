@@ -1,5 +1,6 @@
 import React from 'react';
 import { Head as InertiaHead } from '@inertiajs/inertia-react';
+import { Helmet } from 'react-helmet-async';
 
 type HeadProps = {
   title: string;
@@ -8,14 +9,18 @@ type HeadProps = {
 };
 
 function Head({ title, description, children }: HeadProps) {
-  const CustomHead = InertiaHead as any;
+  const CustomInertiaHead = InertiaHead as any;
 
   return (
-    <CustomHead>
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      {children}
-    </CustomHead>
+    <>
+      <CustomInertiaHead>
+        <title>{title}</title>
+      </CustomInertiaHead>
+      <Helmet>
+        <meta name="description" content={description} />
+        {children}
+      </Helmet>
+    </>
   );
 }
 

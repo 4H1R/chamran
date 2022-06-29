@@ -6,14 +6,20 @@ interface SelectProps extends ISelect {
   hasError?: boolean;
 }
 
-function Select({ hasError = false, name, options, ...props }: SelectProps) {
+function Select({
+  hasError = false,
+  className = '',
+  name,
+  options,
+  ...props
+}: SelectProps) {
   return (
     <select
       {...props}
       id={name}
-      className={`input-info ${hasError ? 'border-danger-600' : ''} `}
+      className={`${hasError ? 'border-danger-600' : ''} ${className}`}
     >
-      <option>انتخاب کنید</option>
+      <option value="none">انتخاب کنید</option>
       {options.map((option) => (
         <option key={option.value} value={option.value}>
           {option.label}

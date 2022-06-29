@@ -1,0 +1,13 @@
+.animate-bounce-2 {
+  animation: bounce-1 6s infinite normal;
+}
+
+@keyframes bounce-1 {
+  0%,
+  100% {
+    transform: translateY(-3%);
+  }
+  50% {
+    transform: none;
+  }
+}

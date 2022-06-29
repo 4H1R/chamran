@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\PreRegister\Score;
 use App\Enums\PreRegister\Status;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -34,9 +35,9 @@ class PreRegisterFactory extends Factory
             'seventh_science' => $this->faker->numberBetween(5, 20),
             'eighth_science' => $this->faker->numberBetween(5, 20),
             'ninth_science' => $this->faker->numberBetween(5, 20),
-            'seventh_discipline' => $this->faker->numberBetween(5, 20),
-            'eighth_discipline' => $this->faker->numberBetween(5, 20),
-            'ninth_discipline' => $this->faker->numberBetween(5, 20),
+            'seventh_discipline' => $this->faker->numberBetween(Score::Poor->value, Score::Excellent->value),
+            'eighth_discipline' => $this->faker->numberBetween(Score::Poor->value, Score::Excellent->value),
+            'ninth_discipline' => $this->faker->numberBetween(Score::Poor->value, Score::Excellent->value),
             'status' => $this->faker->boolean() ? Status::Pending : $status,
         ];
     }

@@ -16,28 +16,37 @@ type FieldListProps = {
 function FieldList({ formSchema, form, containerProps }: FieldListProps) {
   const { errors, data, setData, clearErrors } = form;
 
+  const hasError = (name: string) => errors[name] !== undefined;
+  const handleFocus = (name: string) => clearErrors(name);
+
   return (
     <Container {...containerProps}>
-      {formSchema.map(({ name, label, type, fieldProps }) => (
-        <Field name={name} label={label} error={errors[name]} key={name}>
+      {formSchema.map(({ isRequired, name, label, type, fieldProps }) => (
+        <Field
+          isRequired={isRequired}
+          name={name}
+          label={label}
+          error={errors[name]}
+          key={name}
+        >
           {type === 'input' && (
             <Input
               {...(fieldProps as IInput)}
               name={name}
-              hasError={errors[name] !== undefined}
+              hasError={hasError(name)}
               value={data[name]}
               onChange={(e) => setData(name, e.target.value)}
-              onFocus={() => clearErrors(name)}
+              onFocus={() => handleFocus(name)}
             />
           )}
           {type === 'select' && (
             <Select
               {...(fieldProps as ISelect)}
               name={name}
-              hasError={errors[name] !== undefined}
+              hasError={hasError(name)}
               value={data[name]}
               onChange={(e) => setData(name, e.target.value)}
-              onFocus={() => clearErrors(name)}
+              onFocus={() => handleFocus(name)}
             />
           )}
         </Field>
