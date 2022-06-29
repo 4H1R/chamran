@@ -1,5 +1,6 @@
 <?php
 
+use App\Filament\Others\UiAvatarsProvider;
 use App\Http\Livewire\Auth\Login;
 use App\Http\Livewire\Dashboard;
 use Filament\Http\Middleware\Authenticate;
@@ -231,7 +232,7 @@ return [
     |
     */
 
-    'default_avatar_provider' => \Filament\AvatarProviders\UiAvatarsProvider::class,
+    'default_avatar_provider' => UiAvatarsProvider::class,
 
     /*
     |--------------------------------------------------------------------------

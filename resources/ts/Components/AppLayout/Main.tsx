@@ -5,7 +5,7 @@ type MainProps = {
 };
 
 function Main({ children }: MainProps) {
-  return <main className="">{children}</main>;
+  return <main>{children}</main>;
 }
 
 export default memo(Main);
