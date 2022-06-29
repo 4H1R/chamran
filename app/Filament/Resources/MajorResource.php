@@ -19,6 +19,8 @@ class MajorResource extends Resource
 
     protected static ?string $navigationLabel = 'رشته ها';
 
+    protected static ?string $navigationGroup = 'مدرسه';
+
     protected static ?string $label = 'رشته';
 
     protected static ?string $pluralLabel = 'رشته ها';

@@ -14,6 +14,7 @@ use Filament\Tables\Actions\Action;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\Filter;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 
 class PreRegisterResource extends Resource
 {
@@ -21,18 +22,28 @@ class PreRegisterResource extends Resource
 
     protected static ?string $navigationLabel = 'پیش ثبت نام';
 
+    protected static ?string $navigationGroup = 'پیش ثبت نام';
+
     protected static ?string $label = 'پیش ثبت نام';
 
     protected static ?string $pluralLabel = 'پیش ثبت نام ها';
 
     protected static ?string $navigationIcon = 'heroicon-o-briefcase';
 
+    public static function canCreate(): bool
+    {
+        return false;
+    }
+
+    public static function canEdit(Model $record): bool
+    {
+        return false;;
+    }
+
     public static function form(Form $form): Form
     {
         return $form
-            ->schema([
-                //
-            ]);
+            ->schema([]);
     }
 
     public static function table(Table $table): Table
@@ -133,6 +144,12 @@ class PreRegisterResource extends Resource
                 Filter::make('is_status_rejected')
                     ->label(Status::Rejected->textFa())
                     ->query(fn (Builder $query): Builder => $query->where('status', Status::Rejected)),
+                Filter::make('latest')
+                    ->label('جدید ترین')
+                    ->query(fn (Builder $query): Builder => $query->latest('id')),
+                Filter::make('oldest')
+                    ->label('قدیمی ترین')
+                    ->query(fn (Builder $query): Builder => $query->oldest('id')),
             ])
             ->prependBulkActions([]);
     }

@@ -30,7 +30,7 @@ function Result({ status, fullName }: ResultProps) {
   }[status];
   return (
     <div className="relative flex flex-col flex-wrap items-center w-full h-full space-y-4 text-center">
-      <h1 className="text-2xl font-bold">
+      <h1 className="text-2xl h1">
         جناب آقای <span className="text-primary-600">{fullName}</span> {text}
       </h1>
       {description && (

@@ -17,7 +17,7 @@ function Select({
     <select
       {...props}
       id={name}
-      className={`${hasError ? 'border-danger-600' : ''} ${className}`}
+      className={`pr-8 ${hasError ? 'border-danger-600' : ''} ${className}`}
     >
       <option value="none">انتخاب کنید</option>
       {options.map((option) => (
