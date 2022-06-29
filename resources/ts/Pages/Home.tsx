@@ -8,7 +8,7 @@ import Intro from '@/Components/Home/Intro';
 
 function Home() {
   return (
-    <div className="container flex flex-col items-center space-y-6 lg:flex-row-reverse lg:space-y-0">
+    <div className="flex flex-col items-center space-y-4 lg:flex-row-reverse lg:space-y-0">
       <Head
         title="صفحه اصلی"
         description="هنرستانی با بیش از ۵ دهه آموزش و با بهره مندی از اساتید با تجربه و محیط جذاب به شما در رشد تحصیلی کمک میکند."
@@ -25,7 +25,7 @@ function Home() {
         transition={{ duration: 0.6 }}
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
-        className="space-y-6 text-center lg:text-right"
+        className="space-y-4 text-center lg:text-right"
       >
         <Intro />
         <Actions />

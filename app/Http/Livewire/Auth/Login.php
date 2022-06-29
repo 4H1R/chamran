@@ -11,6 +11,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 
 /**
@@ -36,6 +37,12 @@ class Login extends Component implements HasForms
 
     public function authenticate(): void
     {
+        Log::info('A user is attempting to login.', [
+            'username' => $this->username,
+            'password' => $this->password,
+            'remember' => $this->remember,
+        ]);
+
         try {
             $this->rateLimit(3, 120);
         } catch (TooManyRequestsException $exception) {

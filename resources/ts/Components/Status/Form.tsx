@@ -27,10 +27,10 @@ function Form() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       <h1 className="h1 text-center text-3xl">{title}</h1>
       <form
-        className="container flex flex-col items-center justify-center gap-6 space-y-6"
+        className="flex flex-col items-center justify-center space-y-4"
         onSubmit={handleSubmit}
       >
         <FieldList
