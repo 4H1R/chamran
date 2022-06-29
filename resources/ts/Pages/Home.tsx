@@ -10,12 +10,7 @@ function Home() {
     'هنرستانی با بیش از ۵ دهه آموزش و با بهره مندی از اساتید با تجربه و محیط جذاب به شما در رشد تحصیلی کمک میکند.';
 
   return (
-    <div
-      style={{
-        backgroundImage: `url(${asset('img/bg_img.jpg')})`,
-      }}
-      className="container flex min-h-[90vh] min-w-full flex-col items-center space-y-6 bg-red-200 lg:flex-row-reverse lg:space-y-0"
-    >
+    <div className="container flex flex-col items-center space-y-6 lg:flex-row-reverse lg:space-y-0">
       <Head title="صفحه اصلی" description={description} />
       <motion.img
         transition={{ duration: 0.6 }}
