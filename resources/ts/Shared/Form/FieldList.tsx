@@ -17,7 +17,7 @@ function FieldList({ formSchema, form, containerProps }: FieldListProps) {
   const { errors, data, setData, clearErrors } = form;
 
   const hasError = (name: string) => errors[name] !== undefined;
-  const handleFocus = (name: string) => clearErrors(name);
+  const handleFocus = (name: string) => hasError(name) && clearErrors(name);
 
   return (
     <Container {...containerProps}>

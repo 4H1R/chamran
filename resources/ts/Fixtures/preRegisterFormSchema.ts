@@ -54,10 +54,10 @@ export const personal: IField[] = [
 ];
 
 const scoreOptions: ISelectOption[] = [
-  { label: 'عالی', value: '4' },
-  { label: 'خیلی خوب', value: '3' },
-  { label: 'خوب', value: '2' },
-  { label: 'نیاز به تلاش', value: '1' },
+  { label: 'عالی', value: 4 },
+  { label: 'خیلی خوب', value: 3 },
+  { label: 'خوب', value: 2 },
+  { label: 'نیاز به تلاش', value: 1 },
 ];
 
 export const educational: IField[] = [

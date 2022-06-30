@@ -5,7 +5,7 @@ export interface IInput extends React.InputHTMLAttributes<HTMLInputElement> {}
 
 export interface ISelectOption {
   label: string;
-  value: string;
+  value: string | number;
 }
 export interface ISelect extends React.SelectHTMLAttributes<HTMLSelectElement> {
   options: ISelectOption[];

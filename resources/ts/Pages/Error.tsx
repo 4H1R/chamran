@@ -36,7 +36,7 @@ function Error({ status }: ErrorProps) {
           <h1 className="h1">
             <span className="text-primary-600">{status}</span> {title}
           </h1>
-          <p className="text-2xl text-secondary-600">{desc}</p>
+          <p className="text-xl text-secondary-600">{desc}</p>
         </div>
       </div>
       {status !== 503 && (

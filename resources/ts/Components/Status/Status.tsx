@@ -3,7 +3,7 @@ import React from 'react';
 import { usePage } from '@/Hooks';
 import Form from '@/Components/Status/Form';
 import Result from '@/Components/Status/Result';
-import FormAvatar from '@/Shared/Common/FormAvatar';
+import Avatar from '@/Components/Status/Avatar';
 
 export type TStatus = 'Approved' | 'Rejected' | 'Pending';
 
@@ -17,7 +17,7 @@ function Status() {
 
   return (
     <div className="relative flex flex-col">
-      <FormAvatar />
+      <Avatar />
       <div className="mt-12 mb-5">
         {status ? <Result status={status} fullName={full_name!} /> : <Form />}
       </div>

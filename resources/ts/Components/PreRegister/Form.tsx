@@ -51,7 +51,7 @@ function Form({ majors }: FormProps) {
         return { ...acc, [field.name]: '' };
       }, {}),
     };
-  }, {} as any);
+  }, {} as { [key: string]: string });
 
   const form = useForm(initialValues);
   const { processing, post, setData } = form;
@@ -60,7 +60,9 @@ function Form({ majors }: FormProps) {
     e.preventDefault();
     post('/pre-register', {
       onSuccess: () => {
-        toast.success('ثبت نام شما با موفقیت انجام شد');
+        toast.success('ثبت نام شما با موفقیت انجام شد', {
+          duration: 5000,
+        });
         setData(initialValues);
       },
     });

@@ -24,7 +24,7 @@ class PreRegisterController extends Controller
             'first_name' => 'required|min:2|max:255',
             'last_name' => 'required|min:2|max:255',
             'father_name' => 'required|min:2|max:255',
-            'national_code' => 'required|digits:10|unique:pre_registers',
+            'national_code' => 'bail|required|digits:10|unique:pre_registers',
             'mobile' => ['required', 'regex:/^09[0|1|2|3][0-9]{8}$/'],
             'phone' => ['required', 'regex:/^0[0-9]{2,}[0-9]{7,}$/'],
             'address' => 'required|min:5|max:255',
@@ -38,9 +38,9 @@ class PreRegisterController extends Controller
             'seventh_grade' => 'required|numeric|min:5|max:20',
             'eighth_grade' => 'required|numeric|min:5|max:20',
             'ninth_grade' => 'required|numeric|min:5|max:20',
-            'seventh_discipline' => 'required|numeric|min:1|max:5',
-            'eighth_discipline' => 'required|numeric|min:1|max:5',
-            'ninth_discipline' => 'required|numeric|min:1|max:5',
+            'seventh_discipline' => 'required|numeric|min:1|max:4',
+            'eighth_discipline' => 'required|numeric|min:1|max:4',
+            'ninth_discipline' => 'required|numeric|min:1|max:4',
         ]);
 
         PreRegister::create($validated);
