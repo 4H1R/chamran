@@ -149,8 +149,11 @@ return [
         'seventh_science' => 'علوم هفتم',
         'eighth_science' => 'علوم هشتم',
         'ninth_science' => 'علوم نهم',
-        'seventh_discipline' => 'انظباط هفتم',
-        'eighth_discipline' => 'انظباط هشتم',
-        'ninth_discipline' => 'انظباط نهم',
+        'seventh_grade' => 'معدل هفتم',
+        'eighth_grade' => 'معدل هشتم',
+        'ninth_grade' => 'معدل نهم',
+        'seventh_discipline' => 'انضباط هفتم',
+        'eighth_discipline' => 'انضباط هشتم',
+        'ninth_discipline' => 'انضباط نهم',
     ]
 ];

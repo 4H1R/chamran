@@ -105,18 +105,27 @@ class PreRegisterResource extends Resource
                 TextColumn::make('ninth_science')
                     ->sortable()
                     ->label('علوم نهم'),
+                TextColumn::make('seventh_grade')
+                    ->sortable()
+                    ->label('معدل هفتم'),
+                TextColumn::make('eighth_grade')
+                    ->sortable()
+                    ->label('معدل هشتم'),
+                TextColumn::make('ninth_grade')
+                    ->sortable()
+                    ->label('معدل نهم'),
                 TextColumn::make('seventh_discipline')
                     ->sortable()
                     ->formatStateUsing(static fn ($state) => Score::tryFrom($state)->textFa())
-                    ->label('انظباط هفتم'),
+                    ->label('انضباط هفتم'),
                 TextColumn::make('eighth_discipline')
                     ->sortable()
                     ->formatStateUsing(static fn ($state) => Score::tryFrom($state)->textFa())
-                    ->label('انظباط هشتم'),
+                    ->label('انضباط هشتم'),
                 TextColumn::make('ninth_discipline')
                     ->sortable()
                     ->formatStateUsing(static fn ($state) => Score::tryFrom($state)->textFa())
-                    ->label('انظباط نهم')
+                    ->label('انضباط نهم')
             ])
             ->prependActions([
                 Action::make('approve')

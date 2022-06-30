@@ -24,7 +24,7 @@ function Error({ status }: ErrorProps) {
   }[status];
 
   return (
-    <div className="container flex flex-grow flex-col items-center justify-center space-y-4 text-center">
+    <div className="container flex min-h-screen flex-col items-center justify-center space-y-4 text-center">
       <Head title={title!} description={title + ' ' + desc} />
       <img
         src={asset('svg/error.svg')}
@@ -47,5 +47,7 @@ function Error({ status }: ErrorProps) {
     </div>
   );
 }
+
+Error.layout = (page: React.ReactNode) => <>{page}</>;
 
 export default Error;

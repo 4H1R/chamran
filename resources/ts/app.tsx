@@ -13,7 +13,9 @@ createInertiaApp({
   title: (title) => `${title} - ${appName}`,
   resolve: (name) => {
     const page = require(`./Pages/${name}`).default;
-    page.layout = (page: React.ReactNode) => <AppLayout>{page}</AppLayout>;
+    if(!page.layout) {
+      page.layout = (page: React.ReactNode) => <AppLayout>{page}</AppLayout>;
+    }
     return page;
   },
 
