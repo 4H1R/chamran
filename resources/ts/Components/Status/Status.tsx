@@ -7,19 +7,31 @@ import Avatar from '@/Components/Status/Avatar';
 
 export type TStatus = 'Approved' | 'Rejected' | 'Pending';
 
+type TData = {
+  status: TStatus;
+  full_name: string;
+};
+
 type TPageProps = {
-  status?: TStatus;
-  full_name?: string;
+  flash: {
+    data: null | TData;
+  };
 };
 
 function Status() {
-  const { status, full_name } = usePage<TPageProps>().props;
+  const {
+    flash: { data },
+  } = usePage<TPageProps>().props;
 
   return (
     <div className="relative flex flex-col">
       <Avatar />
       <div className="mt-12 mb-5">
-        {status ? <Result status={status} fullName={full_name!} /> : <Form />}
+        {data ? (
+          <Result status={data.status} fullName={data.full_name} />
+        ) : (
+          <Form />
+        )}
       </div>
     </div>
   );

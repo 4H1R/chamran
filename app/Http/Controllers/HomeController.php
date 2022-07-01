@@ -8,17 +8,12 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public static function getProps()
+    public function __invoke()
     {
         $majors = Major::all();
 
-        return [
-            'majors' => MajorResource::collection($majors),
-        ];
-    }
-
-    public function __invoke()
-    {
-        return inertia('Home', HomeController::getProps());
+        return inertia('Home', [
+            'majors' => MajorResource::collection($majors)
+        ]);
     }
 }

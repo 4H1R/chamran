@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { Inertia } from '@inertiajs/inertia';
 
 import { TStatus } from './Status';
 import { asset } from '@/Utils';
@@ -42,10 +41,7 @@ function Result({ status, fullName }: ResultProps) {
         alt={text}
       />
       <button
-        onClick={() => {
-          setIsOpen(false);
-          Inertia.visit('/');
-        }}
+        onClick={() => setIsOpen(false)}
         type="button"
         className=" btn-red mt-11 rounded-lg px-16 py-3  "
       >

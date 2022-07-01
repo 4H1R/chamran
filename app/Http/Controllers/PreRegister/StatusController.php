@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\PreRegister;
 
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\HomeController;
 use App\Models\PreRegister;
 use Illuminate\Http\Request;
 
@@ -19,10 +18,9 @@ class StatusController extends Controller
             ->where('national_code', $validated['national_code'])
             ->first();
 
-        return inertia('Home', [
+        return redirect()->back()->with('data', [
             'status' => $result->status->textEn(),
             'full_name' => "{$result->first_name} {$result->last_name}",
-            ...HomeController::getProps()
         ]);
     }
 }

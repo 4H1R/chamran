@@ -5,27 +5,36 @@ import { asset } from '@/Utils';
 import Head from '@/Shared/Common/Head';
 
 type ErrorProps = {
-  status: number;
+  status: 500 | 503 | 404 | 403 | 405;
 };
 
 function Error({ status }: ErrorProps) {
-  const title = {
-    503: 'سرویس در دسترس نیست',
-    500: 'خطای سرور',
-    404: 'صفحه پیدا نشد',
-    403: 'خطای دسترسی',
-  }[status];
-
-  const desc = {
-    503: 'با عرض پوزش، ما در حال انجام برخی تعمیرات هستیم. لطفا به زودی دوباره بررسی کنید.',
-    500: 'مشکلی در سرورهای ما رخ داد. لطفا بعدا تلاش کنید.',
-    404: 'لطفاً آدرس را در نوار آدرس بررسی کنید و دوباره امتحان کنید',
-    403: 'شما دسترسی لازم برای مشاهده این صفحه را ندارید',
+  const { title, desc } = {
+    503: {
+      title: 'سرویس در دسترس نیست',
+      desc: 'با عرض پوزش، ما در حال انجام برخی تعمیرات هستیم. لطفا به زودی دوباره بررسی کنید.',
+    },
+    500: {
+      title: 'خطای سرور',
+      desc: 'مشکلی در سرورهای ما رخ داد. لطفا بعدا تلاش کنید.',
+    },
+    404: {
+      title: 'صفحه پیدا نشد',
+      desc: 'لطفاً آدرس را در نوار آدرس بررسی کنید و دوباره امتحان کنید',
+    },
+    403: {
+      title: 'خطای دسترسی',
+      desc: 'شما دسترسی لازم برای مشاهده این صفحه را ندارید',
+    },
+    405: {
+      title: 'خطای روش درخواست',
+      desc: 'روش درخواستی که انجام داده اید در سرور پشتیبانی نمی شود',
+    },
   }[status];
 
   return (
     <div className="container flex min-h-screen flex-col items-center justify-center space-y-4 text-center">
-      <Head title={title!} description={title + ' ' + desc} />
+      <Head title={title} description={title + ' ' + desc} />
       <img
         src={asset('svg/error.svg')}
         className="md:w-1/2"
