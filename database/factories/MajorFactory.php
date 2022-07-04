@@ -17,7 +17,7 @@ class MajorFactory extends Factory
     public function definition()
     {
         return [
-            'name' => 'رشته ' . $this->faker->unique()->numberBetween(1, 100),
+            'name' => 'رشته '.$this->faker->unique()->numberBetween(1, 100),
         ];
     }
 }

@@ -4,7 +4,6 @@ namespace App\Http\Livewire;
 
 use Closure;
 use Filament\Pages\Page;
-use Livewire\Component;
 use Illuminate\Support\Facades\Route;
 
 class Dashboard extends Page

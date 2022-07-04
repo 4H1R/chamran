@@ -5,16 +5,13 @@ namespace App\Filament\Resources;
 use App\Enums\PreRegister\Score;
 use App\Enums\PreRegister\Status;
 use App\Filament\Resources\PreRegisterResource\Pages;
-use App\Filament\Traits\hasExcel;
 use App\Models\PreRegister;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables\Actions\Action;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\SelectFilter;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 class PreRegisterResource extends Resource
@@ -38,7 +35,7 @@ class PreRegisterResource extends Resource
 
     public static function canEdit(Model $record): bool
     {
-        return false;;
+        return false;
     }
 
     public static function form(Form $form): Form
@@ -117,7 +114,7 @@ class PreRegisterResource extends Resource
                 TextColumn::make('ninth_discipline')
                     ->sortable()
                     ->formatStateUsing(static fn ($state) => Score::tryFrom($state)->textFa())
-                    ->label('انضباط نهم')
+                    ->label('انضباط نهم'),
             ])
             ->prependActions([
                 Action::make('approve')

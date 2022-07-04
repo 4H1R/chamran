@@ -16,6 +16,6 @@ class UiAvatarsProvider implements AvatarProvider
             ->explode(' ')
             ->join(' ');
 
-        return 'https://ui-avatars.com/api/?name=' . urlencode($name) . '&color=FFFFFF&background=111827';
+        return 'https://ui-avatars.com/api/?name='.urlencode($name).'&color=FFFFFF&background=111827';
     }
 }

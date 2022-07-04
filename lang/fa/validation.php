@@ -155,5 +155,5 @@ return [
         'seventh_discipline' => 'انضباط هفتم',
         'eighth_discipline' => 'انضباط هشتم',
         'ninth_discipline' => 'انضباط نهم',
-    ]
+    ],
 ];

@@ -1,8 +1,9 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PreRegister\PreRegisterController;
+use App\Http\Controllers\PreRegister\StatusController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{AboutUsController, ContactUsController, HomeController};
-use App\Http\Controllers\PreRegister\{PreRegisterController, StatusController};
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +22,4 @@ Route::get('/pre-register', [PreRegisterController::class, 'index'])->name('pre-
 Route::post('/pre-register', [PreRegisterController::class, 'store']);
 Route::post('/pre-register/status', [StatusController::class, 'store'])->name('pre-register.status');
 
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';

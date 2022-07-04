@@ -13,6 +13,7 @@ class PreRegisterController extends Controller
     public function index()
     {
         $majors = Major::all();
+
         return inertia('PreRegister', [
             'majors' => MajorResource::collection($majors),
         ]);

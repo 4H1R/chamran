@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use App\Models\Major;
 use App\Models\PreRegister;
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder

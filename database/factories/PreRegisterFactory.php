@@ -19,7 +19,7 @@ class PreRegisterFactory extends Factory
     public function definition()
     {
         $status = $this->faker->boolean() ? Status::Approved : Status::Rejected;
-        $phone = 031 . $this->faker->randomNumber(8);
+        $phone = 031 .$this->faker->randomNumber(8);
 
         return [
             'first_name' => $this->faker->firstName('male'),

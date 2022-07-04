@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\MajorResource;
 use App\Models\Major;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -13,7 +12,7 @@ class HomeController extends Controller
         $majors = Major::all();
 
         return inertia('Home', [
-            'majors' => MajorResource::collection($majors)
+            'majors' => MajorResource::collection($majors),
         ]);
     }
 }

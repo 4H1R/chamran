@@ -22,7 +22,9 @@ class Login extends Component implements HasForms
     use WithRateLimiting;
 
     public $username = '';
+
     public $password = '';
+
     public $remember = false;
 
     public function mount(): void
@@ -49,7 +51,7 @@ class Login extends Component implements HasForms
 
         $data = $this->form->getState();
 
-        if (!Filament::auth()->attempt([
+        if (! Filament::auth()->attempt([
             'username' => $data['username'],
             'password' => $data['password'],
         ], $data['remember'])) {
