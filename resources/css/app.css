@@ -34,16 +34,16 @@
   }
 
   .h1 {
-    @apply text-3xl font-extrabold leading-tight tracking-tighter lg:text-4xl;
+    @apply text-3xl font-bold leading-tight tracking-tighter lg:text-4xl;
   }
 
   .h2 {
-    @apply text-2xl font-extrabold leading-tight tracking-tighter lg:text-3xl;
+    @apply text-2xl font-bold leading-tight tracking-tighter lg:text-3xl;
   }
 
   .btn,
   .btn-sm {
-    @apply delay inline-flex items-center justify-center rounded-md border border-transparent font-medium leading-snug disabled:opacity-50;
+    @apply delay inline-flex items-center justify-center rounded-md font-medium leading-snug disabled:opacity-50;
   }
 
   .btn {
@@ -55,7 +55,7 @@
   }
 
   .btn-primary {
-    @apply bg-primary-600 font-bold text-white hover:bg-primary-700;
+    @apply bg-primary-600 text-white hover:bg-primary-700;
   }
 
   .btn-secondary {
@@ -63,6 +63,6 @@
   }
 
   .btn-outline-primary {
-    @apply border border-primary-600 text-primary-600 hover:border-none hover:bg-primary-600 hover:text-white;
+    @apply border border-primary-600 text-primary-600 hover:border-transparent hover:bg-primary-600 hover:text-white;
   }
 }

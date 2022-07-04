@@ -15,7 +15,11 @@ const tailwindcss = require('tailwindcss');
 mix
   .ts('resources/ts/app.tsx', 'public/js')
   .react()
-  .postCss('resources/css/app.css', 'public/css', [tailwindcss(), require('autoprefixer')])
+  .copy('resources/assets', 'public/assets')
+  .postCss('resources/css/app.css', 'public/css', [
+    tailwindcss(),
+    require('autoprefixer'),
+  ])
   .postCss('resources/css/admin.css', 'public/css', [
     tailwindcss('admin.tailwind.config.js'),
     require('autoprefixer'),

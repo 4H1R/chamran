@@ -5,7 +5,7 @@ function Action({ className = '' }) {
   return (
     <Link
       href="/pre-register"
-      className={`btn-sm delay btn-outline-primary rounded ${className}`}
+      className={`btn-sm btn-outline-primary ${className}`}
     >
       پیش ثبت نام
     </Link>

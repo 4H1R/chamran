@@ -17,7 +17,7 @@ function Home() {
         transition={{ duration: 0.6 }}
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
-        className="animate-bounce-2 h-80 w-full object-cover sm:w-9/12 md:w-7/12 lg:h-auto lg:w-[55%]"
+        className="h-80 w-full object-cover sm:w-9/12 md:w-7/12 lg:h-auto lg:w-[55%]"
         src={asset('img/student.png')}
         alt="Student"
       />
