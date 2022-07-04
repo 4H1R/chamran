@@ -14,11 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('pre_registers', function (Blueprint $table) {
-            $table->after('ninth_math', function ($table) {
-                $table->smallInteger('seventh_grade');
-                $table->smallInteger('eighth_grade');
-                $table->smallInteger('ninth_grade');
-            });
+            $table->dropColumn(['seventh_science', 'eighth_science', 'ninth_science']);
         });
     }
 
@@ -30,7 +26,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('pre_registers', function (Blueprint $table) {
-            $table->dropColumn(['seventh_grade', 'eighth_grade', 'ninth_grade']);
+            //
         });
     }
 };

@@ -13,6 +13,7 @@ use Filament\Resources\Table;
 use Filament\Tables\Actions\Action;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\Filter;
+use Filament\Tables\Filters\SelectFilter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
@@ -96,15 +97,6 @@ class PreRegisterResource extends Resource
                 TextColumn::make('ninth_math')
                     ->sortable()
                     ->label('ریاضی نهم'),
-                TextColumn::make('seventh_science')
-                    ->sortable()
-                    ->label('علوم هفتم'),
-                TextColumn::make('eighth_science')
-                    ->sortable()
-                    ->label('علوم هشتم'),
-                TextColumn::make('ninth_science')
-                    ->sortable()
-                    ->label('علوم نهم'),
                 TextColumn::make('seventh_grade')
                     ->sortable()
                     ->label('معدل هفتم'),
@@ -144,21 +136,14 @@ class PreRegisterResource extends Resource
                     ->color('danger'),
             ])
             ->filters([
-                Filter::make('is_status_pending')
-                    ->label(Status::Pending->textFa())
-                    ->query(fn (Builder $query): Builder => $query->where('status', Status::Pending)),
-                Filter::make('is_status_approved')
-                    ->label(Status::Approved->textFa())
-                    ->query(fn (Builder $query): Builder => $query->where('status', Status::Approved)),
-                Filter::make('is_status_rejected')
-                    ->label(Status::Rejected->textFa())
-                    ->query(fn (Builder $query): Builder => $query->where('status', Status::Rejected)),
-                Filter::make('latest')
-                    ->label('جدید ترین')
-                    ->query(fn (Builder $query): Builder => $query->latest('id')),
-                Filter::make('oldest')
-                    ->label('قدیمی ترین')
-                    ->query(fn (Builder $query): Builder => $query->oldest('id')),
+                SelectFilter::make('status')
+                    ->label('وضعیت')
+                    ->column('status')
+                    ->options([
+                        Status::Pending->value => Status::Pending->textFa(),
+                        Status::Approved->value => Status::Approved->textFa(),
+                        Status::Rejected->value => Status::Rejected->textFa(),
+                    ]),
             ])
             ->prependBulkActions([]);
     }

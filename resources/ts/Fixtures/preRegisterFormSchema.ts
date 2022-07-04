@@ -85,27 +85,6 @@ export const educational: IField[] = [
   {
     isRequired: true,
     type: 'input',
-    name: 'seventh_science',
-    label: 'علوم هفتم',
-    fieldProps: { type: 'number' },
-  },
-  {
-    isRequired: true,
-    type: 'input',
-    name: 'eighth_science',
-    label: 'علوم هشتم',
-    fieldProps: { type: 'number' },
-  },
-  {
-    isRequired: true,
-    type: 'input',
-    name: 'ninth_science',
-    label: 'علوم نهم',
-    fieldProps: { type: 'number' },
-  },
-  {
-    isRequired: true,
-    type: 'input',
     name: 'seventh_grade',
     label: 'معدل هفتم',
     fieldProps: { type: 'number' },
