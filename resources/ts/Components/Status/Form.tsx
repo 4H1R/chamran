@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { useForm } from '@inertiajs/inertia-react';
 
-import { IField } from '@/App/interfaces';
+import { TField } from '@/App/types';
 import { Button, FieldList } from '@/Shared/Form';
 import { statusContext } from '@/Layouts/AppLayout';
 
-const formSchema: IField[] = [
+const formSchema: TField[] = [
   {
     isRequired: true,
     name: 'national_code',
@@ -50,7 +50,7 @@ function Form() {
           <button
             onClick={() => setIsOpen(false)}
             type="button"
-            className="btn-sm btn-red"
+            className="btn-sm btn-secondary"
           >
             بازگشت
           </button>

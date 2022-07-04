@@ -5,7 +5,7 @@ import Form from '@/Components/Status/Form';
 import Result from '@/Components/Status/Result';
 import Avatar from '@/Components/Status/Avatar';
 
-export type TStatus = 'Approved' | 'Rejected' | 'Pending';
+export type TStatus = 'Approved' | 'Rejected' | 'Pending' | 'Reserved';
 
 type TData = {
   status: TStatus;

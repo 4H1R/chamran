@@ -7,6 +7,7 @@ enum Status: int
     case Pending = 0;
     case Approved = 1;
     case Rejected = 2;
+    case Reserved = 3;
 
     public function textFa(): string
     {
@@ -14,6 +15,7 @@ enum Status: int
             Status::Pending => 'در انتظار تایید',
             Status::Approved => 'تایید شده',
             Status::Rejected => 'رد شده',
+            Status::Reserved => 'رزرو شده'
         };
     }
 
@@ -23,6 +25,7 @@ enum Status: int
             Status::Pending => 'Pending',
             Status::Approved => 'Approved',
             Status::Rejected => 'Rejected',
+            Status::Reserved => 'Reserved',
         };
     }
 }

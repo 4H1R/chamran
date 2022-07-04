@@ -7,7 +7,6 @@ import { useVisible } from '@/Hooks';
 import { navbarContext } from '../Navbar';
 import Toggler from './Toggler';
 import Link from './Link';
-import Login from '../Login';
 import OpenStatusModal from '../OpenStatusModal';
 
 function Links() {
@@ -29,9 +28,6 @@ function Links() {
           </Link>
         ))}
         <OpenStatusModal className="flex py-2 text-secondary-600 hover:text-secondary-700" />
-        <li>
-          <Login />
-        </li>
       </ul>
     </motion.nav>
   );

@@ -2,13 +2,14 @@ import React, { Fragment, useMemo } from 'react';
 import { useForm } from '@inertiajs/inertia-react';
 import toast from 'react-hot-toast';
 
-import { IField, IMajor } from '@/App/interfaces';
+import { IMajor } from '@/App/interfaces';
+import { TField } from '@/App/types';
 import { educational, personal } from '@/Fixtures/preRegisterFormSchema';
 import { Button, FieldList } from '@/Shared/Form';
 
 type TFormSchema = {
   title: string;
-  formSchema: IField[];
+  formSchema: TField[];
 };
 
 type FormProps = {
@@ -16,6 +17,11 @@ type FormProps = {
 };
 
 function Form({ majors }: FormProps) {
+  const majorOptions = majors.map((major) => ({
+    label: major.name,
+    value: major.id,
+  }));
+
   const formSchema: TFormSchema[] = useMemo(
     () => [
       {
@@ -28,10 +34,7 @@ function Form({ majors }: FormProps) {
             name: 'major_id',
             label: 'رشته مورد نظر',
             fieldProps: {
-              options: majors.map((major) => ({
-                label: major.name,
-                value: major.id,
-              })) as any,
+              options: majorOptions,
             },
           },
         ],
@@ -44,14 +47,16 @@ function Form({ majors }: FormProps) {
     [majors]
   );
 
-  const initialValues = formSchema.reduce((acc, forms) => {
-    return {
-      ...acc,
-      ...forms.formSchema.reduce((acc, field) => {
-        return { ...acc, [field.name]: '' };
-      }, {}),
-    };
-  }, {} as { [key: string]: string });
+  const initialValues = useMemo(() => {
+    return formSchema.reduce((acc, forms) => {
+      return {
+        ...acc,
+        ...forms.formSchema.reduce((acc, field) => {
+          return { ...acc, [field.name]: '' };
+        }, {}),
+      };
+    }, {} as Record<string, string>);
+  }, []);
 
   const form = useForm(initialValues);
   const { processing, post, setData } = form;
@@ -64,6 +69,18 @@ function Form({ majors }: FormProps) {
           duration: 5000,
         });
         setData(initialValues);
+      },
+      onError: (errors) => {
+        // scroll to the first error
+        const lastErrorKey = Object.keys(errors).pop();
+        if (!lastErrorKey) return;
+
+        const element = document.getElementById(lastErrorKey);
+        if (element) {
+          element.scrollIntoView({
+            block: 'center',
+          });
+        }
       },
     });
   };

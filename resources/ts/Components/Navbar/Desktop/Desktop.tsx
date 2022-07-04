@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import { usePage } from '@/Hooks';
 import { navbarContext } from '../Navbar';
 import Link from './Link';
-import Login from '../Login';
 import OpenStatusModal from '../OpenStatusModal';
+import Action from '../Action';
 
 function Links() {
   const links = useContext(navbarContext);
@@ -25,7 +25,7 @@ function Desktop() {
   return (
     <nav className="hidden flex-grow md:flex">
       <Links />
-      <Login />
+      <Action />
     </nav>
   );
 }

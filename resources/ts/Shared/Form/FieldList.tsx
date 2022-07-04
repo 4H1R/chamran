@@ -1,14 +1,15 @@
 import React from 'react';
 import { InertiaFormProps } from '@inertiajs/inertia-react';
 
-import { IField, IInput, ISelect } from '@/App/interfaces';
+import { IInput, ISelect } from '@/App/interfaces';
+import { TField } from '@/App/types';
 import Input from './Fields/Input';
 import Container, { ContainerProps } from './Container';
 import Field from './Field';
 import Select from './Fields/Select';
 
 type FieldListProps = {
-  formSchema: IField[];
+  formSchema: TField[];
   form: InertiaFormProps<any>;
   containerProps?: ContainerProps;
 };
@@ -45,7 +46,10 @@ function FieldList({ formSchema, form, containerProps }: FieldListProps) {
               name={name}
               hasError={hasError(name)}
               value={data[name]}
-              onChange={(e) => setData(name, e.target.value)}
+              onChange={(e) => {
+                setData(name, e.target.value);
+                fieldProps.onChange && fieldProps.onChange(e);
+              }}
               onFocus={() => handleFocus(name)}
             />
           )}

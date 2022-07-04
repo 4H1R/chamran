@@ -26,6 +26,12 @@ function Result({ status, fullName }: ResultProps) {
       text: 'پیش ثبت نام شما در انتظار تایید است',
       image: 'pending',
     },
+    Reserved: {
+      text: 'پیش ثبت نام شما در لیست رزرو قرار گرفته است',
+      description:
+        'اعلام نتیجه ثبت نام دانش آموزان رزرو در تاریخ ۱۵ و ۳۰ هر ماه مشخص می گردد',
+      image: 'pending',
+    },
   }[status];
   return (
     <div className="relative flex h-full w-full flex-col flex-wrap items-center space-y-4 text-center">
@@ -43,7 +49,7 @@ function Result({ status, fullName }: ResultProps) {
       <button
         onClick={() => setIsOpen(false)}
         type="button"
-        className=" btn-red mt-11 rounded-lg px-16 py-3  "
+        className="btn-sm btn-secondary"
       >
         بازگشت
       </button>

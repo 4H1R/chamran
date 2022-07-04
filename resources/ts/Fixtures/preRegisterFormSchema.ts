@@ -1,7 +1,7 @@
-import { ISelectOption } from './../App/interfaces';
-import { IField } from '@/App/interfaces';
+import { ISelectOption } from '@/App/interfaces';
+import { TField } from '@/App/types';
 
-export const personal: IField[] = [
+export const personal: TField[] = [
   {
     isRequired: true,
     type: 'input',
@@ -60,7 +60,7 @@ const scoreOptions: ISelectOption[] = [
   { label: 'نیاز به تلاش', value: 1 },
 ];
 
-export const educational: IField[] = [
+export const educational: TField[] = [
   {
     isRequired: true,
     type: 'input',
@@ -86,21 +86,21 @@ export const educational: IField[] = [
     isRequired: true,
     type: 'input',
     name: 'seventh_grade',
-    label: 'معدل هفتم',
+    label: 'معدل نهایی هفتم',
     fieldProps: { type: 'number' },
   },
   {
     isRequired: true,
     type: 'input',
     name: 'eighth_grade',
-    label: 'معدل هشتم',
+    label: 'معدل نهایی هشتم',
     fieldProps: { type: 'number' },
   },
   {
     isRequired: true,
     type: 'input',
     name: 'ninth_grade',
-    label: 'معدل نهم',
+    label: 'معدل نهایی نهم',
     fieldProps: { type: 'number' },
   },
   {

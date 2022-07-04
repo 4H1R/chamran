@@ -99,13 +99,13 @@ class PreRegisterResource extends Resource
                     ->label('ریاضی نهم'),
                 TextColumn::make('seventh_grade')
                     ->sortable()
-                    ->label('معدل هفتم'),
+                    ->label('معدل نهایی هفتم'),
                 TextColumn::make('eighth_grade')
                     ->sortable()
-                    ->label('معدل هشتم'),
+                    ->label('معدل نهایی هشتم'),
                 TextColumn::make('ninth_grade')
                     ->sortable()
-                    ->label('معدل نهم'),
+                    ->label('معدل نهایی نهم'),
                 TextColumn::make('seventh_discipline')
                     ->sortable()
                     ->formatStateUsing(static fn ($state) => Score::tryFrom($state)->textFa())
@@ -134,6 +134,13 @@ class PreRegisterResource extends Resource
                     ->icon('heroicon-o-x')
                     ->visible(fn ($record) => Status::from($record->getRawOriginal('status')) !== Status::Rejected)
                     ->color('danger'),
+                Action::make('reserve')
+                    ->label('رزرو کردن')
+                    ->action(fn ($record) => $record->update(['status' => Status::Reserved]))
+                    ->requiresConfirmation()
+                    ->icon('heroicon-o-archive')
+                    ->visible(fn ($record) => Status::from($record->getRawOriginal('status')) !== Status::Reserved)
+                    ->color('warning'),
             ])
             ->filters([
                 SelectFilter::make('status')
@@ -143,6 +150,7 @@ class PreRegisterResource extends Resource
                         Status::Pending->value => Status::Pending->textFa(),
                         Status::Approved->value => Status::Approved->textFa(),
                         Status::Rejected->value => Status::Rejected->textFa(),
+                        Status::Reserved->value => Status::Reserved->textFa(),
                     ]),
             ])
             ->prependBulkActions([]);
