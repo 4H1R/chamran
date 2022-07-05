@@ -19,7 +19,7 @@ function Select({
       id={name}
       className={`pr-8 ${hasError ? 'border-danger-600' : ''} ${className}`}
     >
-      <option value="none">انتخاب کنید</option>
+      <option value="">انتخاب کنید</option>
       {options.map((option) => (
         <option key={option.value} value={option.value}>
           {option.label}
