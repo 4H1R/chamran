@@ -9,8 +9,6 @@ import AppLayout from '@/Layouts/AppLayout';
 const appName =
   window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 
-const container = document.getElementById('app')!;
-
 createInertiaApp({
   title: (title) => `${title} - ${appName}`,
   resolve: (name) => {
