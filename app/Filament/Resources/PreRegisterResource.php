@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Enums\PreRegister\Score;
 use App\Enums\PreRegister\Status;
 use App\Filament\Resources\PreRegisterResource\Pages;
+use App\Filament\Traits\hasExcel;
 use App\Models\PreRegister;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -16,6 +17,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class PreRegisterResource extends Resource
 {
+    use hasExcel;
+
     protected static ?string $model = PreRegister::class;
 
     protected static ?string $navigationLabel = 'پیش ثبت نام';
@@ -150,7 +153,7 @@ class PreRegisterResource extends Resource
                         Status::Reserved->value => Status::Reserved->textFa(),
                     ]),
             ])
-            ->prependBulkActions([]);
+            ->prependBulkActions([hasExcel::getExcelBulkAction()]);
     }
 
     public static function getPages(): array
