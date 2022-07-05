@@ -1,4 +1,4 @@
-import React, { Fragment, useMemo } from 'react';
+import React, { Fragment, useMemo, useState } from 'react';
 import { useForm } from '@inertiajs/inertia-react';
 import toast from 'react-hot-toast';
 
@@ -7,7 +7,7 @@ import { TField } from '@/App/types';
 import { educational, personal } from '@/Fixtures/preRegisterFormSchema';
 import { Button, FieldList } from '@/Shared/Form';
 
-type TFormSchema = {
+export type TFormSchema = {
   title: string;
   formSchema: TField[];
 };
@@ -17,10 +17,29 @@ type FormProps = {
 };
 
 function Form({ majors }: FormProps) {
-  const majorOptions = majors.map((major) => ({
-    label: major.name,
-    value: major.id,
-  }));
+  const [selectedMajors, setSelectedMajors] = useState<Record<string, number>>(
+    {}
+  );
+  const handleSelectMajor = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedMajors({
+      ...selectedMajors,
+      [e.target.id]: parseInt(e.target.value, 10),
+    });
+  };
+  const getMajorOptions = (name: string) => {
+    return majors
+      .map((major) => ({
+        label: major.name,
+        value: major.id,
+      }))
+      .filter((major) => {
+        const isSelected = !Object.values(selectedMajors).find(
+          (id) => id === major.value
+        );
+        const isSelectedByCurrentName = selectedMajors[name] === major.value;
+        return isSelected || isSelectedByCurrentName;
+      });
+  };
 
   const formSchema: TFormSchema[] = useMemo(
     () => [
@@ -32,9 +51,30 @@ function Form({ majors }: FormProps) {
             isRequired: true,
             type: 'select',
             name: 'major_id',
-            label: 'رشته مورد نظر',
+            label: 'رشته اولویت اول',
             fieldProps: {
-              options: majorOptions,
+              onChange: handleSelectMajor,
+              options: getMajorOptions('major_id'),
+            },
+          },
+          {
+            isRequired: false,
+            type: 'select',
+            name: 'second_major_id',
+            label: 'رشته اولویت دوم',
+            fieldProps: {
+              onChange: handleSelectMajor,
+              options: getMajorOptions('second_major_id'),
+            },
+          },
+          {
+            isRequired: false,
+            type: 'select',
+            name: 'third_major_id',
+            label: 'رشته اولویت سوم',
+            fieldProps: {
+              onChange: handleSelectMajor,
+              options: getMajorOptions('third_major_id'),
             },
           },
         ],
@@ -44,7 +84,7 @@ function Form({ majors }: FormProps) {
         formSchema: educational,
       },
     ],
-    [majors]
+    [selectedMajors]
   );
 
   const initialValues = useMemo(() => {

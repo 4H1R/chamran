@@ -22,4 +22,14 @@ class PreRegister extends Model
     {
         return $this->belongsTo(Major::class);
     }
+
+    public function secondMajor()
+    {
+        return $this->belongsTo(Major::class, 'second_major_id');
+    }
+
+    public function thirdMajor()
+    {
+        return $this->belongsTo(Major::class, 'third_major_id');
+    }
 }

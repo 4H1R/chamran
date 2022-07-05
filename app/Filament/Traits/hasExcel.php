@@ -19,16 +19,16 @@ trait hasExcel
                             ->heading('وضعیت')
                             ->formatStateUsing(fn ($state) => $state->textFa()),
                         Column::make('seventh_discipline')
-                            ->heading('انضباط هفتم')
+                            ->heading('انضباط نهایی هفتم')
                             ->formatStateUsing(fn ($state) => $state->textFa()),
                         Column::make('eighth_discipline')
-                            ->heading('انضباط هشتم')
+                            ->heading('انضباط نهایی هشتم')
                             ->formatStateUsing(fn ($state) => $state->textFa()),
                         Column::make('ninth_discipline')
-                            ->heading('انضباط نهم')
+                            ->heading('انضباط نهایی نهم')
                             ->formatStateUsing(fn ($state) => $state->textFa()),
                     ])
-                    ->withFilename(date('Y-m-d').' - export'),
+                    ->withFilename(date('Y-m-d') . ' - export'),
             ])
             ->label('خروجی اکسل')
             ->icon('heroicon-o-archive');

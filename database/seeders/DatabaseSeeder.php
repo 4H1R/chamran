@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
         for ($i = 0; $i < 50; $i++) {
             PreRegister::factory()->create([
                 'major_id' => $majors->random()->id,
+                'second_major_id' => $majors->random()->id,
             ]);
         }
     }

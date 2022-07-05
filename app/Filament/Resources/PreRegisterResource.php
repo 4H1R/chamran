@@ -87,16 +87,20 @@ class PreRegisterResource extends Resource
                     ->sortable()
                     ->searchable(),
                 TextColumn::make('major.name')
-                    ->label('رشته درخواستی'),
+                    ->label('رشته اولویت اول'),
+                TextColumn::make('secondMajor.name')
+                    ->label('رشته اولویت دوم'),
+                TextColumn::make('thirdMajor.name')
+                    ->label('رشته اولویت سوم'),
                 TextColumn::make('seventh_math')
                     ->sortable()
-                    ->label('ریاضی هفتم'),
+                    ->label('ریاضی نهایی هفتم'),
                 TextColumn::make('eighth_math')
                     ->sortable()
-                    ->label('ریاضی هشتم'),
+                    ->label('ریاضی نهایی هشتم'),
                 TextColumn::make('ninth_math')
                     ->sortable()
-                    ->label('ریاضی نهم'),
+                    ->label('ریاضی نهایی نهم'),
                 TextColumn::make('seventh_grade')
                     ->sortable()
                     ->label('معدل نهایی هفتم'),
@@ -109,15 +113,15 @@ class PreRegisterResource extends Resource
                 TextColumn::make('seventh_discipline')
                     ->sortable()
                     ->formatStateUsing(static fn ($state) => Score::tryFrom($state)->textFa())
-                    ->label('انضباط هفتم'),
+                    ->label('انضباط نهایی هفتم'),
                 TextColumn::make('eighth_discipline')
                     ->sortable()
                     ->formatStateUsing(static fn ($state) => Score::tryFrom($state)->textFa())
-                    ->label('انضباط هشتم'),
+                    ->label('انضباط نهایی هشتم'),
                 TextColumn::make('ninth_discipline')
                     ->sortable()
                     ->formatStateUsing(static fn ($state) => Score::tryFrom($state)->textFa())
-                    ->label('انضباط نهم'),
+                    ->label('انضباط نهایی نهم'),
             ])
             ->prependActions([
                 Action::make('approve')
