@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { createInertiaApp } from '@inertiajs/inertia-react';
 import { InertiaProgress } from '@inertiajs/progress';
 import { Toaster } from 'react-hot-toast';
@@ -8,6 +8,8 @@ import { HelmetProvider } from 'react-helmet-async';
 import AppLayout from '@/Layouts/AppLayout';
 const appName =
   window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
+
+const container = document.getElementById('app')!;
 
 createInertiaApp({
   title: (title) => `${title} - ${appName}`,
@@ -20,14 +22,15 @@ createInertiaApp({
   },
 
   setup({ el, App, props }) {
-    return render(
+    const root = createRoot(el);
+
+    return root.render(
       <React.StrictMode>
         <Toaster />
         <HelmetProvider>
           <App {...props} />
         </HelmetProvider>
-      </React.StrictMode>,
-      el
+      </React.StrictMode>
     );
   },
 });
