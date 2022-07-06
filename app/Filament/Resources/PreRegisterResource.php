@@ -5,7 +5,6 @@ namespace App\Filament\Resources;
 use App\Enums\PreRegister\Score;
 use App\Enums\PreRegister\Status;
 use App\Filament\Resources\PreRegisterResource\Pages;
-use App\Filament\Traits\hasExcel;
 use App\Models\PreRegister;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -14,11 +13,12 @@ use Filament\Tables\Actions\Action;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Illuminate\Database\Eloquent\Model;
+use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
+use pxlrbt\FilamentExcel\Columns\Column;
+use pxlrbt\FilamentExcel\Exports\ExcelExport;
 
 class PreRegisterResource extends Resource
 {
-    use hasExcel;
-
     protected static ?string $model = PreRegister::class;
 
     protected static ?string $navigationLabel = 'پیش ثبت نام';
@@ -157,7 +157,28 @@ class PreRegisterResource extends Resource
                         Status::Reserved->value => Status::Reserved->textFa(),
                     ]),
             ])
-            ->prependBulkActions([hasExcel::getExcelBulkAction()]);
+            ->prependBulkActions([ExportBulkAction::make('export')
+                ->exports([
+                    ExcelExport::make()
+                        ->fromTable()
+                        ->withColumns([
+                            Column::make('status')
+                                ->heading('وضعیت')
+                                ->formatStateUsing(fn ($state) => $state->textFa()),
+                            Column::make('seventh_discipline')
+                                ->heading('انضباط نهایی هفتم')
+                                ->formatStateUsing(fn ($state) => $state->textFa()),
+                            Column::make('eighth_discipline')
+                                ->heading('انضباط نهایی هشتم')
+                                ->formatStateUsing(fn ($state) => $state->textFa()),
+                            Column::make('ninth_discipline')
+                                ->heading('انضباط نهایی نهم')
+                                ->formatStateUsing(fn ($state) => $state->textFa()),
+                        ])
+                        ->withFilename(date('Y-m-d') . ' - export'),
+                ])
+                ->label('خروجی اکسل')
+                ->icon('heroicon-o-archive')]);
     }
 
     public static function getPages(): array
