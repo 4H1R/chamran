@@ -27,14 +27,15 @@ class PreRegisterFactory extends Factory
         $scoreRef = new ReflectionClass(Score::class);
         $score = $scoreRef->getConstants();
 
-        $phone = 031 .$this->faker->randomNumber(8);
+        $mobile = '0913' . $this->faker->randomNumber(7);
+        $phone = '031' . $this->faker->randomNumber(8);
 
         return [
             'first_name' => $this->faker->firstName('male'),
             'last_name' => $this->faker->lastName(),
             'father_name' => $this->faker->firstName('male'),
             'national_code' => $this->faker->numberBetween(1111111111, 9999999999),
-            'mobile' => $this->faker->phoneNumber(),
+            'mobile' => $mobile,
             'phone' => $phone,
             'address' => $this->faker->address(),
             'seventh_math' => $this->faker->numberBetween(5, 20),
