@@ -10,6 +10,7 @@ export type TStatus = 'Approved' | 'Rejected' | 'Pending' | 'Reserved';
 type TData = {
   status: TStatus;
   full_name: string;
+  acceptedMajor: string | null;
 };
 
 type TPageProps = {
@@ -28,7 +29,11 @@ function Status() {
       <Avatar />
       <div className="mt-12 mb-5">
         {data ? (
-          <Result status={data.status} fullName={data.full_name} />
+          <Result
+            acceptedMajor={data.acceptedMajor}
+            status={data.status}
+            fullName={data.full_name}
+          />
         ) : (
           <Form />
         )}

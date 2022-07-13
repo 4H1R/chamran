@@ -19,6 +19,7 @@ class StatusController extends Controller
             ->first();
 
         return redirect()->back()->with('data', [
+            'acceptedMajor' => $result->acceptedMajor?->name,
             'status' => $result->status->textEn(),
             'full_name' => "{$result->first_name} {$result->last_name}",
         ]);

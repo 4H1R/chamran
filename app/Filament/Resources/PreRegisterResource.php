@@ -6,6 +6,7 @@ use App\Enums\PreRegister\Score;
 use App\Enums\PreRegister\Status;
 use App\Filament\Resources\PreRegisterResource\Pages;
 use App\Models\PreRegister;
+use Filament\Forms\Components\Select;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
@@ -36,15 +37,14 @@ class PreRegisterResource extends Resource
         return false;
     }
 
-    public static function canEdit(Model $record): bool
-    {
-        return false;
-    }
-
     public static function form(Form $form): Form
     {
         return $form
-            ->schema([]);
+            ->schema([
+                Select::make('accepted_major_id')
+                    ->label('رشته قبول شده')
+                    ->relationship('acceptedMajor', 'name')
+            ]);
     }
 
     public static function table(Table $table): Table
@@ -92,36 +92,38 @@ class PreRegisterResource extends Resource
                     ->label('رشته اولویت دوم'),
                 TextColumn::make('thirdMajor.name')
                     ->label('رشته اولویت سوم'),
+                TextColumn::make('acceptedMajor.name')
+                    ->label('رشته تایید شده'),
                 TextColumn::make('seventh_math')
                     ->sortable()
-                    ->label('ریاضی نهایی هفتم'),
+                    ->label('ریاضی پایانی هفتم'),
                 TextColumn::make('eighth_math')
                     ->sortable()
-                    ->label('ریاضی نهایی هشتم'),
+                    ->label('ریاضی پایانی هشتم'),
                 TextColumn::make('ninth_math')
                     ->sortable()
-                    ->label('ریاضی نهایی نهم'),
+                    ->label('ریاضی پایانی نهم'),
                 TextColumn::make('seventh_grade')
                     ->sortable()
-                    ->label('معدل نهایی هفتم'),
+                    ->label('معدل کل هفتم'),
                 TextColumn::make('eighth_grade')
                     ->sortable()
-                    ->label('معدل نهایی هشتم'),
+                    ->label('معدل کل هشتم'),
                 TextColumn::make('ninth_grade')
                     ->sortable()
-                    ->label('معدل نهایی نهم'),
+                    ->label('معدل کل نهم'),
                 TextColumn::make('seventh_discipline')
                     ->sortable()
                     ->formatStateUsing(static fn ($state) => Score::tryFrom($state)->textFa())
-                    ->label('انضباط نهایی هفتم'),
+                    ->label('انضباط پایانی هفتم'),
                 TextColumn::make('eighth_discipline')
                     ->sortable()
                     ->formatStateUsing(static fn ($state) => Score::tryFrom($state)->textFa())
-                    ->label('انضباط نهایی هشتم'),
+                    ->label('انضباط پایانی هشتم'),
                 TextColumn::make('ninth_discipline')
                     ->sortable()
                     ->formatStateUsing(static fn ($state) => Score::tryFrom($state)->textFa())
-                    ->label('انضباط نهایی نهم'),
+                    ->label('انضباط پایانی نهم'),
             ])
             ->prependActions([
                 Action::make('approve')
@@ -166,13 +168,13 @@ class PreRegisterResource extends Resource
                                 ->heading('وضعیت')
                                 ->formatStateUsing(fn ($state) => $state->textFa()),
                             Column::make('seventh_discipline')
-                                ->heading('انضباط نهایی هفتم')
+                                ->heading('انضباط پایانی هفتم')
                                 ->formatStateUsing(fn ($state) => $state->textFa()),
                             Column::make('eighth_discipline')
-                                ->heading('انضباط نهایی هشتم')
+                                ->heading('انضباط پایانی هشتم')
                                 ->formatStateUsing(fn ($state) => $state->textFa()),
                             Column::make('ninth_discipline')
-                                ->heading('انضباط نهایی نهم')
+                                ->heading('انضباط پایانی نهم')
                                 ->formatStateUsing(fn ($state) => $state->textFa()),
                         ])
                         ->withFilename(date('Y-m-d') . ' - export'),

@@ -32,4 +32,9 @@ class PreRegister extends Model
     {
         return $this->belongsTo(Major::class, 'third_major_id');
     }
+
+    public function acceptedMajor()
+    {
+        return $this->belongsTo(Major::class, 'accepted_major_id');
+    }
 }

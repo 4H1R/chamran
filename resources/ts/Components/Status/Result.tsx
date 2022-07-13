@@ -7,15 +7,17 @@ import { statusContext } from '@/Layouts/AppLayout';
 type ResultProps = {
   status: TStatus;
   fullName: string;
+  acceptedMajor: string | null;
 };
 
-function Result({ status, fullName }: ResultProps) {
+function Result({ status, fullName, acceptedMajor }: ResultProps) {
   const { setIsOpen } = useContext(statusContext);
   const { text, image, description } = {
     Approved: {
       text: 'پیش ثبت نام شما مورد تایید قرار گرفت',
-      description:
-        'جهت تکمیل ثبت نام حداکثر ظرف یک هفته به هنرستان فنی شهید چمران مراجعه کنید در صورت عدم مراجعه این هنرستان تعهدی به ثبت نام شما ندارد.',
+      description: `${
+        acceptedMajor ? `رشته مورد تایید شما ${acceptedMajor} است` : ''
+      } جهت تکمیل ثبت نام حداکثر ظرف یک هفته به هنرستان فنی شهید چمران در روز های دوشنبه و چهارشنبه ساعت ۹ الی ۱۳ مراجعه کنید.`,
       image: 'approved',
     },
     Rejected: {
